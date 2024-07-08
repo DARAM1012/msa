@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    input[type="text"]{
+      width: 300px;
+      height: 50px;
+      font-size: 2rem;
+      border-radius: 10px;
+    }
+    #male:checked ~ div{
+      background-color: aqua;
+      border: 1px solid black;
+      height: 300px;
+    }
+  </style>
+</head>
+<body>
+  <form action="../exam/1.html" method="get">
+    <fieldset>
+      <legend>회원가입</legend>
+    <div>
+      <label for="id">ID</label>
+      <input type="text" placeholder="아이디" id="id">
+           </div>
+          </fieldset>
+          <fieldset>
+            <legend>남자니? 여자니?</legend>
+     <div>
+      <label for="male">남</label>
+      <input type="checkbox" id="male" name="gender">
+      <label for="female">여</label>
+      <input type="checkbox" id="female" name="gender">
+      <div>성별을 선택</div>
+     </div> 
+     <input type="submit" value="전송">
+    </fieldset>
+  </form>
+
+</body>
+</html>

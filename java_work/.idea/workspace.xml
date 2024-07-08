@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6a54e71f-f0f1-4683-8e14-0b2dfa765dbd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex07/ex07.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex07/src/AA.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex07/src/BB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex07/src/CC.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex07/src/DD.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex07/src/EE.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex07/src/FF.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex07/src/GG.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex07/src/practice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex08/ex08.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex08/src/BankAccount.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex08/src/BankAccountMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex08/src/Box.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex08/src/Ex01.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex08/src/Ex02.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex08/src/Ex03.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex08/src/Ex04.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex08/src/Ex05.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex08/src/aa/Ex05.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex08/src/aa/bb/CC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex04/src/ex04/exam.java" beforeDir="false" afterPath="$PROJECT_DIR$/ex05/src/ex05/exam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex04/src/ex04/exam1.java" beforeDir="false" afterPath="$PROJECT_DIR$/ex05/src/ex05/exam1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex04/src/ex04/exam2.java" beforeDir="false" afterPath="$PROJECT_DIR$/ex05/src/ex05/exam2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex04/src/ex04/exam3.java" beforeDir="false" afterPath="$PROJECT_DIR$/ex05/src/ex05/exam3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex04/src/ex04/exam4.java" beforeDir="false" afterPath="$PROJECT_DIR$/ex05/src/ex05/exam4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html_work/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html_work/1/ex01.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html_work/2/css/mystyle.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html_work/2/ex01.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html_work/2/image/apple.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html_work/2/structure.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html_work/3/css/ex02.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html_work/3/css/table.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html_work/3/ex01.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html_work/3/ex02.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html_work/3/images/aa.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html_work/3/table.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html_work/4/ex02.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html_work/4/ex03.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html_work/4/ex05.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html_work/4/hani.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html_work/exam/1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html_work/exam/2.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html_work/exam/2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html_work/exam/3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/html_work/exam/Ex01.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_work/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_work/day01/Ex01.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_work/day01/Ex01.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/n주차_자기학습관리.hwp" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2iwXiakkuH0yqjFLikP9BgdcVf7" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.BankAccountMain.executor": "Run",
+    "Application.CC.executor": "Run",
+    "Application.Ex02.executor": "Run",
+    "Application.Ex03.executor": "Run",
+    "Application.Ex04.executor": "Run",
+    "Application.Ex05.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="Application.Ex05">
+    <configuration name="BankAccountMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="BankAccountMain" />
+      <module name="ex08" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Ex02" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Ex02" />
+      <module name="ex08" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Ex03" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Ex03" />
+      <module name="ex08" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Ex04" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Ex04" />
+      <module name="ex08" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Ex05" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Ex05" />
+      <module name="ex08" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Ex05" />
+        <item itemvalue="Application.BankAccountMain" />
+        <item itemvalue="Application.Ex04" />
+        <item itemvalue="Application.Ex03" />
+        <item itemvalue="Application.Ex02" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6a54e71f-f0f1-4683-8e14-0b2dfa765dbd" name="Changes" comment="" />
+      <created>1720402740694</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1720402740694</updated>
+    </task>
+    <servers />
+  </component>
+</project>

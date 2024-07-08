@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="960aeefc-e62f-48ab-a4fc-09c04233409c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/java_work/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java_work/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java_work/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java_work/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java_work/.idea/work.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java_work/ex07/ex07.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java_work/ex07/src/AA.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java_work/ex07/src/BB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java_work/ex07/src/CC.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java_work/ex07/src/DD.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java_work/ex07/src/EE.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java_work/ex07/src/FF.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java_work/ex07/src/GG.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java_work/ex07/src/practice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java_work/ex08/ex08.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_work/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_work/ex04/src/ex04/exam.java" beforeDir="false" afterPath="$PROJECT_DIR$/java_work/ex05/src/ex05/exam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_work/ex04/src/ex04/exam1.java" beforeDir="false" afterPath="$PROJECT_DIR$/java_work/ex05/src/ex05/exam1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_work/ex04/src/ex04/exam2.java" beforeDir="false" afterPath="$PROJECT_DIR$/java_work/ex05/src/ex05/exam2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_work/ex04/src/ex04/exam3.java" beforeDir="false" afterPath="$PROJECT_DIR$/java_work/ex05/src/ex05/exam3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_work/ex04/src/ex04/exam4.java" beforeDir="false" afterPath="$PROJECT_DIR$/java_work/ex05/src/ex05/exam4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_work/html_work/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_work/html_work/1/ex01.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_work/html_work/2/css/mystyle.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_work/html_work/2/ex01.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_work/html_work/2/image/apple.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_work/html_work/2/structure.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_work/html_work/3/css/ex02.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_work/html_work/3/css/table.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_work/html_work/3/ex01.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_work/html_work/3/ex02.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_work/html_work/3/images/aa.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_work/html_work/3/table.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_work/html_work/4/ex02.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_work/html_work/4/ex03.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_work/html_work/4/ex05.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_work/html_work/4/hani.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_work/html_work/exam/1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_work/html_work/exam/2.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_work/html_work/exam/2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_work/html_work/exam/3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_work/html_work/exam/Ex01.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_work/java_work/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_work/java_work/day01/Ex01.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_work/java_work/day01/Ex01.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java_work/n주차_자기학습관리.hwp" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/java_work" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="2iwT0elIVQzCEpAIsJSIfl4EKAw" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="960aeefc-e62f-48ab-a4fc-09c04233409c" name="Changes" comment="" />
+      <created>1720400419434</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1720400419434</updated>
+    </task>
+    <servers />
+  </component>
+</project>
