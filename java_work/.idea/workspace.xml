@@ -5,60 +5,102 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a54e71f-f0f1-4683-8e14-0b2dfa765dbd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex07/ex07.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex07/src/AA.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex07/src/BB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex07/src/CC.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex07/src/DD.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex07/src/EE.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex07/src/FF.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex07/src/GG.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex07/src/practice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex08/ex08.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex08/src/BankAccount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex08/src/BankAccountMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex08/src/Box.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex08/src/Ex01.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex08/src/Ex02.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex08/src/Ex03.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex08/src/Ex04.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex08/src/Ex05.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex08/src/aa/Ex05.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ex08/src/aa/bb/CC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex04/src/ex04/exam.java" beforeDir="false" afterPath="$PROJECT_DIR$/ex05/src/ex05/exam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex04/src/ex04/exam1.java" beforeDir="false" afterPath="$PROJECT_DIR$/ex05/src/ex05/exam1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex04/src/ex04/exam2.java" beforeDir="false" afterPath="$PROJECT_DIR$/ex05/src/ex05/exam2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex04/src/ex04/exam3.java" beforeDir="false" afterPath="$PROJECT_DIR$/ex05/src/ex05/exam3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ex04/src/ex04/exam4.java" beforeDir="false" afterPath="$PROJECT_DIR$/ex05/src/ex05/exam4.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_work/.vscode/settings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_work/1/ex01.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_work/2/css/mystyle.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_work/2/ex01.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_work/2/image/apple.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_work/2/structure.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_work/3/css/ex02.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_work/3/css/table.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_work/3/ex01.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_work/3/ex02.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_work/3/images/aa.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_work/3/table.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_work/4/ex02.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_work/4/ex03.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_work/4/ex05.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_work/4/hani.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_work/exam/1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_work/exam/2.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_work/exam/2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_work/exam/3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html_work/exam/Ex01.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java_work/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java_work/day01/Ex01.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java_work/day01/Ex01.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/n주차_자기학습관리.hwp" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../html_work/9/cat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../html_work/9/ex01.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../html_work/9/ex02.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../html_work/9/ex03.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../html_work/9/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/.idea/libraries/_mylyn.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/A.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/AAA.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/BB.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/CC.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/Ex01.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/Ex02.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/Ex03.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/Ex04.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/Ex05.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/aa/Ex01.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/aa/Ex02.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/aa/Ex03.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/aa/Ex04.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/aa/Ex05.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/aa/Ex06.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/aa/Ex07.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/aa/Ex08.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/aa/bb/Fact.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/bank/BankAccount.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/bank/BankAccountMain.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/day01/Ex01.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/day01/ex01/.classpath" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/day01/ex01/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/day01/ex01/.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/day01/ex01/.settings/org.eclipse.core.resources.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/day01/ex01/.settings/org.eclipse.jdt.core.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/day01/ex02/.classpath" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/day01/ex02/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/day01/ex02/.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/day01/ex02/.settings/org.eclipse.core.resources.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/day01/ex02/.settings/org.eclipse.jdt.core.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/day01/ex03/.classpath" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/day01/ex03/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/day01/ex03/.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/day01/ex03/.settings/org.eclipse.core.resources.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/day01/ex03/.settings/org.eclipse.jdt.core.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/day01/ex04/.classpath" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/day01/ex04/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/day01/ex04/.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/day01/ex04/.settings/org.eclipse.core.resources.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/day01/ex04/.settings/org.eclipse.jdt.core.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/ex01/Ex01.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/ex01/Ex02.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/ex01/Ex03.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/ex02/Ex01.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/ex02/Ex02.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/ex02/Ex03.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/ex03/Ex01.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/ex03/Ex02.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/ex03/Ex03.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/ex03/Ex04.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/ex03/Ex05.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/ex03/Ex06.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/ex03/Ex07.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/ex03/Ex08.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/ex03/Ex09.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/ex03/Ex10.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/ex03/Ex11.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/ex03/Ex12.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/ex03/Ex13.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/ex04/Ex01.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/ex04/Ex02.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/ex04/Ex03.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/ex04/Ex04.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/ex04/Ex05.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/ex04/Ex06.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/ex04/Ex07.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/ex09/ex09.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/java_work.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/practice/.classpath" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/practice/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/practice/.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/practice/.settings/org.eclipse.jdt.core.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/practice/src/ex01.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/practice/src/ex02.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/practice/src/ex03.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/java_work/practice/src/ex04.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/src/ex03.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/src/ex04.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/src/ex05.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/src/ex05_text.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/practice/src/ex05_text2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,11 +115,11 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2iwXiakkuH0yqjFLikP9BgdcVf7" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -93,40 +135,18 @@
     "Application.Ex03.executor": "Run",
     "Application.Ex04.executor": "Run",
     "Application.Ex05.executor": "Run",
+    "Application.ex03.executor": "Run",
+    "Application.ex04.executor": "Run",
+    "Application.ex05.executor": "Run",
+    "Application.ex05_text.executor": "Run",
+    "Application.exam1.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true"
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/msa/java_work"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.Ex05">
-    <configuration name="BankAccountMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="BankAccountMain" />
-      <module name="ex08" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Ex02" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Ex02" />
-      <module name="ex08" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Ex03" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Ex03" />
-      <module name="ex08" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Ex04" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Ex04" />
-      <module name="ex08" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.ex05_text">
     <configuration name="Ex05" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Ex05" />
       <module name="ex08" />
@@ -134,13 +154,65 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ex04" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="practice.src.ex04" />
+      <module name="java_work" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="practice.src.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ex05" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="practice.src.ex05" />
+      <module name="java_work" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="practice.src.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ex05_text" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="practice.src.ex05_text" />
+      <module name="java_work" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="practice.src.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="exam1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ex05.exam1" />
+      <module name="ex05" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ex05.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ex05_text" />
+        <item itemvalue="Application.exam1" />
+        <item itemvalue="Application.ex05" />
         <item itemvalue="Application.Ex05" />
-        <item itemvalue="Application.BankAccountMain" />
-        <item itemvalue="Application.Ex04" />
-        <item itemvalue="Application.Ex03" />
-        <item itemvalue="Application.Ex02" />
+        <item itemvalue="Application.ex04" />
       </list>
     </recent_temporary>
   </component>
