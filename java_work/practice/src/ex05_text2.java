@@ -6,6 +6,18 @@ public class ex05_text2 {
 
     public static void main(String[] args) {
         int num = 10;
-        System.out.println(1);
+
+        if(num>0)
+            System.out.println("양수");
+        else if ( num<0)
+        System.out.println("음수");
+
+        else if (num==0)
+            System.out.println("0");
+
     }
 }
+
+//1.num이 양수면 양수를 출력한다
+//2.num이 음수면 음수를 출력한다
+//3.num이 0면 0을 출력한다

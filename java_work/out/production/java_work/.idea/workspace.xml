@@ -5,9 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a54e71f-f0f1-4683-8e14-0b2dfa765dbd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/practice/src/ex03.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex10/ex10.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex10/src/Ex01.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex10/src/aa.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/src/test2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ex05/src/ex05/exam2.java" beforeDir="false" afterPath="$PROJECT_DIR$/ex05/src/ex05/exam2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java_work/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java_work/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java_work/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java_work/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java_work/practice/src/ex05_text.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java_work/practice/src/ex05_text.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/src/ex05_text2.java" beforeDir="false" afterPath="$PROJECT_DIR$/practice/src/ex05_text2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,43 +51,31 @@
     "Application.Ex03.executor": "Run",
     "Application.Ex04.executor": "Run",
     "Application.Ex05.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.ex03.executor": "Run",
+    "Application.ex04.executor": "Run",
+    "Application.ex05.executor": "Run",
+    "Application.ex05_text.executor": "Run",
+    "Application.ex05_text2.executor": "Run",
+    "Application.exam1.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/msa/java_work"
+    "last_opened_file_path": "D:/msa/java_work",
+    "onboarding.tips.debug.path": "D:/msa/java_work/ex10/src/Main.java"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.ex03">
-    <configuration name="BankAccountMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="BankAccountMain" />
-      <module name="ex08" />
+  <component name="RunManager" selected="Application.ex05_text2">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="test" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Ex03" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Ex03" />
-      <module name="ex08" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Ex04" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Ex04" />
-      <module name="ex08" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Ex05" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Ex05" />
-      <module name="ex08" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ex03" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="practice.src.ex03" />
+    <configuration name="ex05" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="practice.src.ex05" />
       <module name="java_work" />
       <extension name="coverage">
         <pattern>
@@ -90,13 +87,52 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ex05_text" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="practice.src.ex05_text" />
+      <module name="java_work" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="practice.src.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ex05_text2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="practice.src.ex05_text2" />
+      <module name="java_work" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="practice.src.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="exam1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ex05.exam1" />
+      <module name="ex05" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ex05.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ex03" />
-        <item itemvalue="Application.Ex05" />
-        <item itemvalue="Application.BankAccountMain" />
-        <item itemvalue="Application.Ex04" />
-        <item itemvalue="Application.Ex03" />
+        <item itemvalue="Application.ex05_text2" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.ex05_text" />
+        <item itemvalue="Application.exam1" />
+        <item itemvalue="Application.ex05" />
       </list>
     </recent_temporary>
   </component>
@@ -110,5 +146,21 @@
       <updated>1720402740694</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/test/src/Main.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ex10/src/Main.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

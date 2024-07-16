@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 300;
+  font-style: normal;
+  font-family: "Black Han Sans", sans-serif;
+    }
+
+.container {
+  width: 960px;
+  min-width: 960px;
+  margin: 0 auto;
+  background-color: #d9d9d9;
+}
+
+ul {
+  float: right;
+}
+
+li {
+  float: left;
+  list-style: none;
+}
+
+a {color: #333;
+  text-decoration: none;
+  padding: 0.4rem 1rem;
+  display: block;
+  /* background-color: aqua; */
+  margin: 0.8rem 0.3rem;
+}
+
+.header {
+  overflow: hidden;
+}
+.logo{float: left; display: block; padding: 0.3rem; margin: 0.2rem;}
+
+.sign{background-color: rgb(121, 121, 121);
+  border-radius: 0.4rem;}
+
+.register{background-color: black;
+  border-radius: 0.4rem;}
+
+  /* .slider{
+    height: 1000px;
+    overflow: hidden;
+  } */
+
+  .slider>div{
+    height: 400px;
+    overflow: hidden;
+  }
+  .heading > h1,h2 {
+    padding-left: 2rem;
+  }
+
+  .outside{
+    display: flex;
+    justify-content: center;
+    /* overflow: hidden; */
+  }
+  /* .prevnext>#slider-prev{
+    float: left;
+  }
+  .prevnext>#slider-next{
+    float: right;
+  } */
+
+  .sub-heading{
+    margin: 3rem 0;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .sub-heading > div {
+    width: 280px;
+    background-color: #cbf0ff;
+  }

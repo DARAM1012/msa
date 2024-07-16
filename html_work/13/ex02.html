@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+  *{margin: 0; padding: 0; box-sizing: border-box;}
+
+    .header{
+      background-color: bisque;
+    }
+    .content{
+      overflow: hidden;
+      background-color: aquamarine;
+    }
+    .footer{
+      background-color: bisque;
+    }
+    .leftside{
+      float: left;
+      background-color: yellowgreen;
+      height: 500px;
+    }
+    .center{
+      float: left;
+      height: 500px;
+    }
+    .rightside{
+      float: right;
+      height: 500px;
+      background-color: yellowgreen;
+    }
+    .myfix{
+      position: fixed;
+      height: 100px;
+      width: 100px;
+      background-color: rgb(80,54,105);
+      bottom: 30px;
+      right: 30px;
+      border-radius: 50px;
+    }
+    .myst{
+      position: sticky;
+      top: 0;
+      background-color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>사이트 제목</h1>
+    </div>
+    <div class="myst"><h2>여기 고정될 예정</h2></div>
+    <div class="content">
+      <div class="leftside"><h2>왼쪽사이드바</h2></div>
+      <div class="center"><h2>본문</h2></div>
+      <div class="rightside"><h2>오른쪽사이드바</h2></div>
+    </div>
+    <div class="footer">
+      <h1>푸터</h1>
+    </div>
+  </div>
+  <div class="myfix"></div>
+</body>
+</html>

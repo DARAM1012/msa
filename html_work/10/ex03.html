@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .out-div{overflow: hidden;}
+    .in-div{
+      width: 100px;
+      height: 100px;
+    }
+    .blue{
+      background-color: blue;
+
+    }
+    .yellow{background-color: yellow;
+          float: right;}
+    
+    .green {
+      background-color: green;
+    }
+
+    .red{background-color: red;
+          float: left;
+
+    }
+  </style>
+  
+<!-- 규칙 : 자식 태그에 float 속성을 주면 부모태그에 overflow  hidden을 줘야함 -->
+ 
+</head>
+<body>
+  <div class="out-div green">
+    <div class="in-div blue">
+      <h1>AA</h1>
+    </div>
+    <div class="in-div yellow">
+      <h1>BB</h1>
+    </div>
+    <div class="in-div red">
+      <h1>CC</h1>
+    </div>
+  </div>
+  
+  </div>
+</body>
+</html>

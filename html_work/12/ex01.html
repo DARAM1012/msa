@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+@font-face {
+    font-family: 'Ownglyph_ryuttung-Rg';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405-2@1.0/Ownglyph_ryuttung-Rg.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+    *{margin: 0; padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ownglyph_ryuttung-Rg';
+  }
+    #container{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-image: url(../10/aaa.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: rgb(255, 255, 255);
+    }
+    #container > div{
+      width: 800px;
+        background-color: rgba(255, 0, 0, 0.2);
+        border: 1px solid black;
+    margin: 30px;
+    padding: 30px;
+    
+    }
+    
+    li{list-style: none;}
+
+    .content ul li{
+      display: inline;
+
+    }
+
+    .header{border-radius: 2rem 2rem 0 0;
+      
+       
+    }
+
+    .footer{border-radius:0 0 2rem 2rem;
+
+      }
+      .footer>table{
+        width: 100%;
+        text-align: center;
+      }
+      .footer > table,th,td{
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      .footer th,td{
+        padding: 0.5rem;
+      }
+  </style>
+</head>
+<body>
+  <div id="container">
+  <div class="header">
+    <h1>레드향</h1>
+    <p>껍질에 붉은 빛이 돌아 레드향이라 불린다.</p>
+  </div>
+  <div class="content">
+    <h1>레드향 샐러드 레시피</h1>
+    <p><b>재료</b> 레드향 1개 아보카드 1개 토마토 1개</p>
+    <ul>
+      <li>샐러드</li>
+      <li>레드향</li>
+      <li>아보카드</li>
+    </ul>
+  </div>
+  <div class="footer">
+    <h1>상품 구성</h1>
+    <table>
+      <tr>
+        <th>용도</th>
+        <th>중량</th>
+        <th>개수</th>
+      </tr>
+      <tr>
+        <td>선물용</td>
+        <td>3kg</td>
+        <td>1개</td>
+      </tr>
+      <tr>
+        <td>선물용</td>
+        <td>3kg</td>
+        <td>1개</td>
+      </tr>
+    </table>
+  </div>
+</div>
+</body>
+</html>

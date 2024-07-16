@@ -6,7 +6,7 @@ public class ex04 {
         int num = 0;
 
         do{
-            System.out.println("I hate Jave" + num);
+            System.out.println("I hate Java" + num);
             num++;
         } while (num <5);
 

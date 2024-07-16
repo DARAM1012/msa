@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(".slider").bxSlider({
+        auto:true,
+        speed:300,
+        nextSelector: '#slider-next',
+        prevSelector: '#slider-prev',
+        nextText: 'Onward →',
+        prevText: '← Go back'
+      });
+    });
+  </script>
+
+
+</head>
+<!-- 규칙 : 자식 태그에 float 속성을 주면 부모태그에 overflow  hidden을 줘야함 -->
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">
+        <h1>Logo</h1>
+      </div>
+      <div>
+        <ul>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Solutions</a></li>
+          <li><a href="#">Community</a></li>
+          <li><a href="#">Resources</a></li>
+          <li><a href="#" class="sign">Sign in</a></li>
+          <li><a href="#" class="register">Register</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="outside">
+            <span id="slider-prev"></span>  <span id="slider-next"></span>
+    </div>
+    <div class="slider" style="background-color: white;">
+      <div><img src="aaa.jpg" >
+        I am a slide.</div>
+      <div><img src="bbb.jpg" >
+        I am a slide.</div>
+      <div><img src="ccc.jpg" >
+        I am a slide.</div>
+      <div><img src="ddd.png">
+        I am a slide.</div>
+    </div>
+    <div class="heading">
+      <h1>heading</h1>
+      <h2>SubHeading</h2>
+      <div class="sub-heading">
+        <div>
+          <h1>홍길동</h1>
+        <p>💖내사랑</p>
+      </div>
+        <div>
+          <h1>손오공</h1>
+          <p>💋</p>
+        </div>
+        <div>
+          <h1>다람쥐</h1>
+          <p>😘</p>
+        </div>        
+      </div>
+      <div class="sub-heading">
+        <div>
+          <h1>홍길동</h1>
+        <p>💖내사랑</p>
+      </div>
+        <div>
+          <h1>손오공</h1>
+          <p>💋</p>
+        </div>
+        <div>
+          <h1>다람쥐</h1>
+          <p>😘</p>
+        </div>        
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

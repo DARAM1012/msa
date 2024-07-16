@@ -10,7 +10,9 @@
       <module fileurl="file://$PROJECT_DIR$/ex06/ex06.iml" filepath="$PROJECT_DIR$/ex06/ex06.iml" />
       <module fileurl="file://$PROJECT_DIR$/ex07/ex07.iml" filepath="$PROJECT_DIR$/ex07/ex07.iml" />
       <module fileurl="file://$PROJECT_DIR$/ex08/ex08.iml" filepath="$PROJECT_DIR$/ex08/ex08.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ex10/ex10.iml" filepath="$PROJECT_DIR$/ex10/ex10.iml" />
       <module fileurl="file://$PROJECT_DIR$/java_work.iml" filepath="$PROJECT_DIR$/java_work.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test/test.iml" filepath="$PROJECT_DIR$/test/test.iml" />
     </modules>
   </component>
 </project>

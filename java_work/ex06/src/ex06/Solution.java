@@ -9,7 +9,7 @@ import java.util.Scanner;
 		        Scanner sc = new Scanner(System.in);
 		        int year = sc.nextInt();
 		        
-		        String age_type = sc.next();
+		        java.lang.String age_type = sc.next();
 		        int answer = 0;
 
 		        // a == 10 숫자 비교
