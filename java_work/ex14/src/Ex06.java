@@ -1,4 +1,4 @@
-class Test{
+class Practice {
     public static void doA(){
         System.out.println("static doA");
     }
@@ -17,8 +17,8 @@ public class Ex06 {
     }
 
     public static void main(String[] args) {
-        Test.doA();
-        Test test = new Test();
+        Practice.doA();
+        Practice test = new Practice();
         test.doB();
 
 //        test.doA();

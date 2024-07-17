@@ -1,0 +1,68 @@
+*{margin: 0; padding: 0; box-sizing: border-box; text-decoration: none;
+list-style: none;}
+
+ .logo{
+  position: relative;
+  top: 10px; left: 50px;
+
+}
+
+ul li{
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color:white;
+}
+/* 글자크기를 16px 맑은 고딕 굵게하고 width넓이 700, 높이 50만큼 배경색은 #ccc, 글자색은 검정색, 라인높이50px
+menu박스 가운데정렬, 글자가운데 정렬 */
+#menu {
+  font:16px "malgun gothic";
+  width:700px;
+  height:50px;
+  color:black;
+  line-height: 50px; 
+  float: right;
+  z-index: 99;
+}
+
+#menu > ul > li {
+  float:left;
+  width:140px;
+  position:relative;
+  bottom: 50px;
+  text-align: center;
+}
+
+#menu > ul > li > ul {
+  width:130px;
+  display:none;
+  position: absolute;
+  font-size:14px;
+  /* background: skyblue; */
+}
+#menu > ul > li:hover > ul {
+  display:block;
+}
+#menu > ul > li > ul > li:hover {
+  background: skyblue;
+  transition: ease 1s;
+  }
+
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  /* opacity: 0.15; */
+}
+
+.bg-video__content {
+  height: 100%;
+  width: 100%;
+  object-fit: cover; 
+  
+}
