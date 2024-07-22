@@ -1,0 +1,26 @@
+package org.example.friend;
+
+import javax.xml.namespace.QName;
+
+public class CompFriend extends Friend {
+    private String department;
+
+    public CompFriend(String name, String phone, String department) {
+        super(name, phone);
+        this.department = department;
+    }
+
+    public void showInfo() {
+        super.showInfo();
+        System.out.println("전공 = " + department);
+    }
+
+    @Override
+    public String toString() {
+        return "CompFriend{" +
+                "name='" + name + '\'' +
+                ", phone='" + phone + '\'' +
+                ", department='" + department + '\'' +
+                '}';
+    }
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    input{display: none;}
+    label{cursor: pointer; padding: 0px 20px;}
+    label::after{
+      height: 0.7rem;
+      content: '^^^^';
+      border-right: 1px solid black;
+    }
+    .my-div{display: none;}
+    #ck1:checked ~ #lab1{background-color: hotpink;}
+    #ck2:checked ~ #lab2{background-color: hotpink;}
+    #ck3:checked ~ #lab3{background-color: hotpink;}
+
+    #ck1:checked ~ #div-1{display: block;}
+    #ck2:checked ~ #div-2{display: block;}
+    #ck3:checked ~ #div-3{display: block;}
+
+    [type=radio]{
+
+    }
+    [for=ck1]{
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>ㅎㅎㅎ</h1>
+    
+    <input type="radio" name="gg" id="ck1" checked>
+    <input type="radio" name="gg" id="ck2">
+    <input type="radio" name="gg" id="ck3">
+    <label for="ck1" id="lab1">ck1</label>
+    <label for="ck2" id="lab2">ck2</label>
+    <label for="ck3" id="lab3">ck3</label>
+    <div class="my-div" id="div-1">Lorem1, ipsum dolor sit amet consectetur adipisicing elit. Impedit eum architecto quam quia porro culpa iure voluptates est corrupti ex, adipisci molestiae. Assumenda error repellat, magnam voluptate neque iusto perferendis.</div>
+    <div class="my-div" id="div-2">Lorem2, ipsum dolor sit amet consectetur adipisicing elit. Impedit eum architecto quam quia porro culpa iure voluptates est corrupti ex, adipisci molestiae. Assumenda error repellat, magnam voluptate neque iusto perferendis.</div>
+    <div class="my-div" id="div-3">Lorem3, ipsum dolor sit amet consectetur adipisicing elit. Impedit eum architecto quam quia porro culpa iure voluptates est corrupti ex, adipisci molestiae. Assumenda error repellat, magnam voluptate neque iusto perferendis.</div>
+  </div>
+</body>
+</html>
