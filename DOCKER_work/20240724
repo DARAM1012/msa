@@ -1,0 +1,6 @@
+# mysql 실행
+# mysql 이미지를 가지고 mysqlcon 컨테이너 생성 포트 3306 detach실행
+docker run -d -p 3306:3306 --name mysqlcon -e MYSQL_ROOT_PASSWORD=1234 mysql
+# 실제 윈도우 3307 포트로 실행
+# 가상 OS 리눅스 3306
+docker run -d -p 3306:3306 --name mysqlcon -e MYSQL_ROOT_PASSWORD=1234 mysql
