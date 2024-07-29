@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 id="heading">자바스크립트</h1>
+  <p id="text">위 텍스트를 클릭해보세요.</p>
+
+  <script>
+    const heading = document.querySelector("#heading");
+    
+    // const clickText = document.querySelector("text");
+
+    heading.onclick = ( )=> {
+      heading.style.color = "red";
+    }
+
+// const flagTF= Flase;
+
+// if(flagTF === True) alert("존재하지 않는 아이디입니다.");
+// else flagTF = True;
+
+// const reply = confirm("프로필 사진을 바꾸시겠습니까?")
+// prompt("이름을 입력하세요.","이름");
+// if(REPLY === True) alert("프로필이 변경되었습니다.");
+// else return;
+
+let sign = prompt("당신의 별자리는 무엇입니까?");
+
+if (sign.toLowerCase() === "전갈자리") {
+  alert("와! 저도 전갈자리예요!");
+}
+// prompt 기능을 쓰는 방법은 다양합니다.
+sign = window.prompt(); // 빈 대화 상자를 엽니다.
+sign = prompt(); // 빈 대화 상자를 엽니다.
+sign = window.prompt("님 지금 기분 좋아요?"); // 안내 문구 "님 지금 기분 좋아요?"가 보이는 창을 띄웁니다.
+sign = window.prompt("님 지금 기분 좋아요?", "네."); // 안내 문구 "님 지금 기분 좋아요?"가 보이는 창을 띄우되 기본적으로 입력되어 있는 값은 "네."로 합니다.
+  </script>
+</body>
+</html>
