@@ -27,7 +27,7 @@ FOREIGN KEY (bookid) REFERENCES Book(bookid)
 );
 
 INSERT INTO Book VALUES(1,'축구의 역사','굿스포츠',7000);
-INSERT INTO Book VALUES(2,'축구 아는 여자','나무수',13000);
+INSERT INTO Book VALUES(2,'그 여자의 축구','나무수',13000);
 INSERT INTO Book VALUES(3,'축구의 이해','대한미디어',22000);
 INSERT INTO Book VALUES(4,'골프 바이블','대한미디어',35000);
 INSERT INTO Book VALUES(5,'피겨 교본','굿스포츠',8000);
@@ -36,6 +36,7 @@ INSERT INTO Book VALUES(7,'야구의 추억','이상미디어',20000);
 INSERT INTO Book VALUES(8,'야구를 부탁해','이상미디어',13000);
 INSERT INTO Book VALUES(9,'올림픽 이야기','삼성당',7500);
 INSERT INTO Book VALUES(10,'Olympic Champions','Pearson',13000);
+
 
 INSERT INTO Customer VALUES(1,'박지성','영국 맨체스타','000-5000-0001');
 INSERT INTO Customer VALUES(2,'김연아','대한민국 서울','000-6000-0001');
@@ -54,14 +55,3 @@ INSERT INTO Orders VALUES (8, 3, 10, 12000, STR_TO_DATE('2024-07-08','%Y-%m-%d')
 INSERT INTO Orders VALUES (9, 2, 10, 7000, STR_TO_DATE('2024-07-09','%Y-%m-%d'));
 INSERT INTO Orders VALUES (10, 3, 8, 13000, STR_TO_DATE('2024-07-10','%Y-%m-%d'));
 
--- 전체 칼럼 보기
- select * from madangdb.book;
- SELECT * FROM Orders;
- select * from Customer;
-
--- 원하는 칼럼 보기
--- select name, address from Customer;-- 
-select bookname, publisher from Book;
-
-select publisher, bookname from Book
-where bookname like '%축구%';
