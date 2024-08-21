@@ -1,12 +1,27 @@
 package org.example;
 
-public class Member {
+public class Member implements Comparable<Member> {
 
     private int idx;
     private String name;
     private int age;
     private String email;
     private String password;
+
+    @Override
+    public int compareTo(Member o) {
+        return this.age - o.age;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return this.idx == ((Member)obj).idx;
+    }
+
+    @Override
+    public int hashCode() {
+        return idx;
+    }
 
     @Override
     public String toString() {
@@ -58,4 +73,6 @@ public class Member {
     public void setPassword(String password) {
         this.password = password;
     }
+
+
 }
