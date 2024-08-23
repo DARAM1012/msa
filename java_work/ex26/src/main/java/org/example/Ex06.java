@@ -22,8 +22,5 @@ public class Ex06 {
         Viewer viewer = new Viewer();
         viewer.showIt("경고 문구 나올까...");
 
-        for (int i = 0; i < ; i++) {
-            
-        }
     }
 }
