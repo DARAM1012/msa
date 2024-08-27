@@ -6,7 +6,7 @@ CREATE TABLE Book(
 bookid INTEGER PRIMARY KEY,
 bookname VARCHAR(40),
 publisher VARCHAR(40),
-price INTEGER
+price INTEGERi_wanna_go_homebooknameorderid
 );
 
 CREATE TABLE Customer(
