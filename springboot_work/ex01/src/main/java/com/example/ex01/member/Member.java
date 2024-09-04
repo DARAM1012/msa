@@ -1,4 +1,4 @@
-package org.example;
+package com.example.ex01.member;
 
 
 import lombok.*;
@@ -10,11 +10,10 @@ import java.time.format.DateTimeFormatter;
 @Setter
 //@ToString
 @RequiredArgsConstructor
-
 @AllArgsConstructor
 @Builder
-
 public class Member {
+
     private int idx;
     private String name;
     private String email;
