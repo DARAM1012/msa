@@ -1,10 +1,10 @@
-create database MYMH;
-use MYMH;
+create database MYMH2;
+use MYMH2;
 
-create table Director(
- d_id int auto_increment NOT NULL PRIMARY KEY,
- d_name	varchar(10)	NOT NULL,
- d_gender char(1)	NULL
+CREATE TABLE Director (
+  d_id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+  d_name VARCHAR(10) NOT NULL,
+  d_gender CHAR(1) NULL
 );
 
 INSERT INTO Director(d_name,d_gender) VALUES('박찬욱','남');
@@ -59,10 +59,10 @@ INSERT INTO Director(d_name,d_gender) VALUES('이연우','남');
 INSERT INTO Director(d_name,d_gender) VALUES('장재현','남');
 
 
-create table Actor(
- a_id int auto_increment NOT NULL PRIMARY KEY,
- a_name	varchar(10)	NOT NULL,
- a_gender char(1)	NULL
+CREATE TABLE Actor (
+  a_id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+  a_name VARCHAR(10) NOT NULL,
+  a_gender CHAR(1) NULL
 );
 
 INSERT INTO Actor(a_name,a_gender) VALUES('이제훈','남');
@@ -116,15 +116,14 @@ INSERT INTO Actor(a_name,a_gender) VALUES('김다미','여');
 INSERT INTO Actor(a_name,a_gender) VALUES('공명','남');
 INSERT INTO Actor(a_name,a_gender) VALUES('현빈','남');
 
-create table Movie(
- m_id int auto_increment NOT NULL PRIMARY KEY,
- m_name varchar(30) NOT NULL,
- m_genre varchar(15) NOT NULL,
- o_date date NOT NULL,
- outline varchar(1000) NOT NULL
+
+CREATE TABLE Movie (
+  m_id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+  m_name VARCHAR(30) NOT NULL,
+  m_genre VARCHAR(15) NOT NULL,
+  o_date DATE NOT NULL,
+  outline VARCHAR(1000) NOT NULL
 );
-
-
 
 INSERT INTO Movie ( m_name,  m_genre, o_date,  outline) VALUES
 ('아가씨', '드라마', '2016-06-01', '일제 강점기, 두 여성의 복수와 사랑을 그린 영화.'),
@@ -374,80 +373,73 @@ INSERT INTO Movie ( m_name,  m_genre, o_date,  outline) VALUES
 ('공조2: 인터내셔널', '액션', '2022-09-07', '국제적인 범죄와의 싸움을 그린 액션 영화.'),
 ('창궐', '액션', '2018-10-25', '좀비와의 전투를 다룬 액션 영화.');
 
-
-
-create table Users(
-u_id int auto_increment NOT NULL PRIMARY KEY,
-u_nikename varchar(20) NOT NULL
+-- 영화와 감독간의 관계 설정 --
+CREATE TABLE MovieDirector (
+  m_id INT NOT NULL,
+  d_id INT NOT NULL,
+  PRIMARY KEY (m_id, d_id),
+  FOREIGN KEY (m_id) REFERENCES Movie(m_id),
+  FOREIGN KEY (d_id) REFERENCES Director(d_id)
 );
 
-create table Rating(
-star int NOT NULL,
-m_id integer,
-u_id integer,
-foreign key (m_id) references Movie(m_id),
-foreign key (u_id) references Users(u_id),
-PRIMARY KEY (m_id, u_id)
+-- 영화-감독 관계 삽입 예시 --
+-- 예를 들어, 영화 1번과 감독 1번을 연결하는 경우
+INSERT INTO MovieDirector (m_id, d_id) VALUES (1, 1);
+INSERT INTO MovieDirector (m_id, d_id) VALUES (2, 1);
+
+
+
+-- 영화와 배우간의 관계 설정 --
+CREATE TABLE MovieActor (
+  m_id INT NOT NULL,
+  a_id INT NOT NULL,
+  PRIMARY KEY (m_id, a_id),
+  FOREIGN KEY (m_id) REFERENCES Movie(m_id),
+  FOREIGN KEY (a_id) REFERENCES Actor(a_id)
 );
 
-create table MovieActor(
-    m_id integer,
-    a_id integer,
-    foreign key (m_id) references Movie(m_id),
-    foreign key (a_id) references Actor(a_id),
-    PRIMARY KEY (m_id, a_id)
-);
+-- 영화-배우 관계 삽입 예시 --
+-- 예를 들어, 영화 1번과 배우 1번을 연결하는 경우
+INSERT INTO MovieActor (m_id, a_id) VALUES (1, 1);
 
--- 뷰 추가 --
 
-create view movie_director
-as select D.d_id AS Drector_id,M.m_id AS Movie_id, m_name,d_name,d.d_id
-from Director d, Movie m;
+select * from movie;
+select * from actor;
+select * from director;
+select * from movieactor;
+select * from MovieDirector;
+DELETE FROM movieactor WHERE a_id = 1; -- 행 삭제
 
-CREATE VIEW movie_director AS
-SELECT m.m_id, m.m_name, m.m_genre, m.o_date, m.outline, d.d_name
+-- 정보 잘 들어갔나 확인용 --
+
+SELECT d.d_name,m.m_name
+FROM Director d
+JOIN MovieDirector md ON d.d_id = md.d_id
+JOIN Movie m ON md.m_id = m.m_id;
+
+
+-- 감독 이름으로 연출한 영화 조회--
+SELECT d.d_name AS 감독, m.m_name AS 영화제목, m.o_date AS 개봉일, m.outline AS 개요
 FROM Movie m
-JOIN Director d ON m.m_id = d.d_id;
+JOIN MovieDirector md ON m.m_id = md.m_id
+JOIN Director d ON md.d_id = d.d_id
+WHERE d.d_name = '박찬욱';
 
+-- 영화 제목으로 감독 및 배우 조회
+SELECT m.m_name, d.d_name AS director_name, a.a_name AS actor_name
+FROM Movie m
+JOIN MovieDirector md ON m.m_id = md.m_id
+JOIN Director d ON md.d_id = d.d_id
+JOIN MovieActor ma ON m.m_id = ma.m_id
+JOIN Actor a ON ma.a_id = a.a_id
+WHERE m.m_name = ?;  -- 영화 제목을 여기에 입력
 
+-- 배우 이름으로 출연한 영화 및 감독 조회
 
-
-CREATE OR REPLACE VIEW movie_director AS
-SELECT
-    m.m_id,
-    m.m_name,
-    d.d_id,      -- d_id 열 추가
-    d.d_name
-FROM
-    Director d, Movie m;
-
-
-
-SELECT * FROM Movie;
-delete from Movie; -- 행 전체 삭제
-SET SQL_SAFE_UPDATES = 0; -- QL 명령어로 Safe Updates 모드 비활성화
-SET SQL_SAFE_UPDATES = 1; -- Safe Updates 모드 활성화
-ALTER TABLE Movie AUTO_INCREMENT = 1; -- 자동 증가 값 리셋 --
-TRUNCATE TABLE Movie; -- 자동 증가 값 리셋 후 테이블 비우기 / 데이터가 없고 ID 값을 1부터 다시 시작하고 싶다면, 다음과 같이 테이블을 비운 후 리셋할 수 있습니다 --
-
-
--- 영화 장르 조회 --
-SELECT m_name, o_date, outline
-FROM Movie
-WHERE m_genre = '스릴러';
-
-
--- 가장 최근에 개봉한 영화 5편 --
-SELECT m_name, o_date
-FROM Movie
-ORDER BY o_date DESC
-LIMIT 5;
-
-
-UPDATE movie
-SET d_id = 1
-WHERE m_id = 2;
-
-SELECT * FROM movie_director;
-SELECT * FROM movie WHERE m_id = 2;
-
+SELECT m.m_name, d.d_name AS director_name, a.a_name AS actor_name
+FROM Movie m
+JOIN MovieDirector md ON m.m_id = md.m_id
+JOIN Director d ON md.d_id = d.d_id
+JOIN MovieActor ma ON m.m_id = ma.m_id
+JOIN Actor a ON ma.a_id = a.a_id
+WHERE a.a_name = ?;  -- 배우 이름을 여기에 입력

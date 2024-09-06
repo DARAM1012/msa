@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var n= prompt('숫자 입력하세요');
+    console.log(n);
+    var result = 1;
+
+    // 5*4*3*2*1 = ""
+
+    if(n!==null){
+
+      for(var i=1; i<=n; i++){
+        document.write(`i = ${i}`);
+        result = result*1;
+      }
+      document.write('<br>')
+      document.write(`숫자 출력+${n} result = ${result}`);
+    }
+    else{
+      document.write('숫자 입력하세요')
+    }
+    
+  </script>
+</body>
+</html>

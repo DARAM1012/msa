@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Document</title>
+  <script>
+    // var 변수 재선언이 되고 전역변수로 선언하는거(옛날꺼)
+    // const 상수입니다. 객체랑 배열에서는 상수가 아니에요...
+    // let 변수 선언 값의 변경이 가능해요..
+    var a = 10;
+    function doA() {
+      console.log(a);
+    }
+    doA();
+    var a = 20;
+    console.log(a);
+
+    let b = 20;
+    console.log(b);
+
+    // let b = 30;
+
+    const c = 30;
+    // c = 40;
+    const d = [];
+    // unshift shift push pop 4개
+    d.push(5); d.push(6); d.push(7);
+
+    console.log(d);
+
+    const e = {};
+    // javascript
+    // java 객체 중각에 변수를 함수..
+    e.a = 10;
+    console.log(e.a);
+    e.b = ()=>{
+      console.log('b함수 입니다.');
+    }
+    console.log(typeof e.a);
+    console.log(typeof e.b);
+
+    console.log(e.b);
+    e.b();
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

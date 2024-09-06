@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="p-4">
+    <h1 class="text-4xl m-3">할일 목록</h1>
+    <ul class="text-2xl">
+      <li><input type="checkbox" name="" id="" class="checke mr-3">할일1</li>
+      <li><input type="checkbox" name="" id="" class="checke mr-3">할일2</li>
+      <li><input type="checkbox" name="" id="" class="checke mr-3">할일3</li>
+      <li><input type="checkbox" name="" id="" class="checke mr-3">할일4</li>
+      <li><input type="checkbox" name="" id="" class="checke mr-3">할일5</li>
+    </ul>
+  </div>
+</body>
+</html>
+<script>
+  const checks = document.getElementsByTagName('input')
+  for (let i = 0; i < checks.length; i++) {
+    const element = checks[i];
+    // element.addEventListener('click',function(){
+    //   console.log(this+'누름'); });
+
+    element.addEventListener('click',(event)=>{
+      // console.log(event.target+'누름'); 
+      // console.log(event.target.parentNode);
+      if(event.target.parentNode.style.textDecoration = 'line-through'){
+        event.target.parentNode.style.color == "";
+        event.target.parentNode.style.textDecoration == "";
+      }
+      else{
+        event.target.parentNode.style.color == "#ccc";
+        event.target.parentNode.style.color == 'line-through';
+      }
+
+      // console.log(event.target.parentNode.style.textDecoration);
+      // console.log(event.target.parentNode.style.color);
+    });
+  }
+</script>

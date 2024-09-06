@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <button id="aa" class="border border-gray-500 m-3 p-3 hover:bg-gray-400">구구단</button>
+  <div id="print"></div>
+  <script>
+    var GUGU = "";
+
+    var aa = document.getElementById('aa');
+    var print = document.getElementById('print');
+
+    console.log(aa);
+    console.log(print);
+
+    aa.onclick = function () {
+      print.innerHTML = "";
+      var num = 2;
+      for (var i = 1; i < 9; i++) {
+        console.log(num + "*" + i + "=" + (num * i));
+        GUGU += num + "*" + i + "=" + (num * i);
+        console.log(GUGU);
+        GUGU = GUGU + '<br/>';
+      }
+      print.innerHTML = print.innerHTML + GUGU;
+    }
+
+    print.innerHTML = GUGU;
+  </script>
+</body>
+
+</html>

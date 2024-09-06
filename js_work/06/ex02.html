@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+
+  <body class="flex flex-col items-center bg-gray-100">
+    <nav class="bg-white shadow-lg">
+      <div class="max-w-7xl mx-auto px-4">
+          <div class="flex justify-between h-16">
+              <div class="flex">
+                  <!-- Logo -->
+                  <div class="flex-shrink-0 flex items-center">
+                      <span class="text-2xl font-bold text-indigo-600">MyLogo</span>
+                  </div>
+                  <!-- Menu Items -->
+                  <div class="hidden md:flex md:space-x-8 ml-10 items-center">
+                      <a href="#" class="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-lg font-medium">Home</a>
+                      <a href="#" class="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-lg font-medium">About</a>
+                      <a href="#" class="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-lg font-medium">Services</a>
+                      <a href="#" class="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-lg font-medium">Contact</a>
+                  </div>
+              </div>
+              <!-- Menu on the right (Optional) -->
+              <div class="hidden md:flex items-center space-x-4">
+                  <a href="#" class="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-lg font-medium">Login</a>
+                  <a href="#" class="bg-indigo-600 text-white px-3 py-2 rounded-md text-lg font-medium hover:bg-indigo-700">Sign Up</a>
+              </div>
+          </div>
+      </div>
+  </nav>
+    <button id="btn" class="
+            bg-gradient-to-r
+            from-blue-300
+            to-indigo-800
+            text-white
+             font-semibold 
+             py-3 px-10 rounded-full
+             shadow-lg 
+             transform 
+             transition 
+             duration-500 
+             hover:scale-105 
+             hover:shadow-xl 
+             m-3">
+      확인
+    </button>
+    <div id="print" class="flex text-2xl"></div>
+    <script>
+      const btn = document.getElementById('btn');
+      const print = document.getElementById('print');
+      const arr = ["홍길동", "김길동", "이길동", "박길동", "최길동", "윤길동", "오길동"];
+
+      // console.log(arr.indexOf('홍길동'));
+      // console.log(arr.indexOf('길동'));
+      // console.log(arr.indexOf('오길동'));
+
+      btn.onclick = () => {
+        print.innerHTML = "";
+        const indexArr = [];
+
+        let temp = 0;
+        for (let i = 0; i < arr.length; i++) {
+          // Number("11.1") => 11.1
+          // parseInt("11.1") => 11
+          do {
+            temp = parseInt(Math.random() * 7);
+          } while (indexArr.indexOf(temp) > -1);
+          indexArr.push(parseInt(temp));
+        }
+        for (let i = 0; i < arr.length; i++) {
+          print.innerHTML = print.innerHTML + `
+            <div class="font-bold text-gray-800 border border-gray-300 p-3">
+              ${arr[indexArr[i]]}
+            </div>
+          `;
+        }
+      }
+    </script>
+  </body>
+
+</html>

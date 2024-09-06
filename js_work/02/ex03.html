@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Document</title>
+  <script>
+    console.log(typeof "asdf");
+    console.log(typeof(10));
+    var a = ["봄","여름","가을","겨울"];
+    var b = ["남자","여자"];
+    var c = [10,20,30];
+
+    var d = a.concat(b);
+    var e = b.concat(c);
+
+    console.log(d);
+    console.log(e);
+  
+  
+    console.log(a);
+
+  var sea = a.shift();
+  console.log(sea);
+  console.log(a);
+
+  a.unshift("봄봄");
+  console.log(a);
+
+  a.push('겨울겨울');
+  console.log(a);
+
+  var lastEle = a.pop();
+  console.log(lastEle);
+  console.log(a);
+  </script>
+</head>
+<body>
+  <div class="container mx-auto w-96 p-4 lg:w-full">
+  <div class="flex flex-col">
+    <h1 class="text-3xl text-red-950 underline m-5">글자</h1>
+    <p class="border border-b-gray-500 p-10 ring-1 hover:animate-spin">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+      Atque, aliquid, in excepturi voluptatum ad porro cum debitis quos dolorem autem eos laborum placeat amet facilis! Pariatur eius qui temporibus nulla.
+    </p>
+  </div>
+  <div class="w-full m-3 lg:items-center">
+    <img src="ham.webp" alt="" srcset="" class="object-cover hover:animate-pulse">
+  </div>
+</div>
+</body>
+</html>
