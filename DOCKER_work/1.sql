@@ -1,4 +1,4 @@
-VALUES
+pmhVALUES
 ('홍길동',100,90,80);
 
 DELETE FROM bb WHERE idx = 1;
