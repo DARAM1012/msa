@@ -23,4 +23,4 @@ export default {
 
 <style lang="scss" scoped>
 
-</style>
+</style>cv

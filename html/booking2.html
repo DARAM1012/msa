@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/booking2.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <script src="js/mouse.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div id="wrap">
+    <div id="nav">
+      <div class="inner">
+        <h1 class="logo">
+          <a href="index.html">
+            <img src="images/logo3.png" alt="disney" width="200" height="66">
+          </a>
+        </h1>
+        <nav class="nav1">
+          <ul class="gnb clear">
+            <li><a href="#">즐길거리</a>
+              <ul class="lnb" id="lnb1">
+                <li><a href="sub_att.html">놀이기구</a></li>
+                <li><a href="#">페스티벌</a></li>
+                <li><a href="#">식당/쇼핑</a></li>
+              </ul>
+            </li>
+            <li><a href="#">요금/우대혜택</a>
+              <ul class="lnb" id="lnb2">
+                <li><a href="#">이용요금</a></li>
+                <li><a href="#">숙소요금</a></li>
+                <li><a href="#">할인&혜택</a></li>
+              </ul>
+            </li>
+            <li><a href="#">이용가이드</a>
+              <ul class="lnb" id="lnb3">
+                <li><a href="#">운영/운휴</a></li>
+                <li><a href="#">이용안내</a></li>
+                <li><a href="#">오시는길</a></li>
+              </ul>
+            </li>
+            <li><a href="#">소통서비스</a>
+              <ul class="lnb" id="lnb3">
+                <li><a href="#">공지사항</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">고객의소리</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div class="login"><a href="login.html"><img src="images/login.png" alt="로그인 아이콘" width="60"></a></div>
+      </div>
+    </div><!--header end-->
+    <header>
+  
+    </header><!--visual-slider end-->
+  </div>
+  <div id="ParkTiket">
+    <div class="Section_Top">
+        <div><img src="" alt=""></div>
+        <div>
+          <h1>디즈니파크 티켓</h1>
+          <p>1일권, 2일권으로 한국 디즈니랜드 파크의 매직을 경험해보세요.</p>
+        </div>
+      </div>
+        <div class="container">
+          <div class="control-group">
+            <label class="control control--radio">날짜별 티켓(1~4일)
+              <input type="radio" name="radio" checked="checked"/>
+              <div class="control__indicator"></div>
+            </label>
+            <p>1개 또는 2개의 테마파크</p>
+            <p>방문일로부터 3일 전까지 취소 가능</p>
+          </div>
+          <div class="control-group">
+
+            <label class="control control--radio">1일권 날짜 미기재 티켓
+              <input type="radio" name="radio" checked="checked"/>
+              <div class="control__indicator"></div>
+            </label>
+            <p>1개 또는 2개의 테마파크</p>
+            <p>구매일자부터 1년 간 유효(취소 및 환불 불가)</p>
+            <p>1개 또는 2개의 테마파크</p>
+          </div>
+          <div class="control-group">
+            <label class="control control--radio">패밀리&프렌즈 1일 티켓
+              <input type="radio" name="radio" checked="checked"/>
+              <div class="control__indicator"></div>
+            </label>
+            <p>4~6명의 손님에게 적합한 가성비 좋은 상품입니다.</p>
+            <p>* 1인당 2만원 절약하세요!</p>
+            <p>* 2024년 9월 21일부터 12월1일까지 방문하는 경우</p>
+            <p>* 1개 또는 2개의 테마파크</p>
+            <p>* 방문일로부터 3일 전까지 취소 가능</p>
+            <p>* 2024년 12월 2일부터는 패밀리&프렌즈 1일 티켓은 12월 3일부터 30일까지 사용가능합니다.</p>
+          </div>
+        </div>
+  </div>
+
+<form action="">
+  <!--  General -->
+  <div class="form-group">
+    <h2 class="heading">Booking & contact</h2>
+    <div class="controls">
+      <input type="text" id="name" class="floatLabel" name="name">
+      <label for="name">Name</label>
+    </div>
+    <div class="controls">
+      <input type="text" id="email" class="floatLabel" name="email">
+      <label for="email">Email</label>
+    </div>
+    <div class="controls">
+      <input type="tel" id="phone" class="floatLabel" name="phone">
+      <label for="phone">Phone</label>
+    </div>
+    <div class="grid">
+      <div class="col-2-3">
+        <div class="controls">
+          <input type="text" id="street" class="floatLabel" name="street">
+          <label for="street">Street</label>
+        </div>
+      </div>
+      <div class="col-1-3">
+        <div class="controls">
+          <input type="number" id="street-number" class="floatLabel" name="street-number">
+          <label for="street-number">Number</label>
+        </div>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="col-2-3">
+        <div class="controls">
+          <input type="text" id="city" class="floatLabel" name="city">
+          <label for="city">City</label>
+        </div>
+      </div>
+      <div class="col-1-3">
+        <div class="controls">
+          <input type="text" id="post-code" class="floatLabel" name="post-code">
+          <label for="post-code">Post Code</label>
+        </div>
+      </div>
+    </div>
+    <div class="controls">
+      <input type="text" id="country" class="floatLabel" name="country">
+      <label for="country">Country</label>
+    </div>
+  </div>
+  <!--  Details -->
+  <div class="form-group">
+    <h2 class="heading">Details</h2>
+    <div class="grid">
+      <div class="col-1-4 col-1-4-sm">
+        <div class="controls">
+          <input type="date" id="arrive" class="floatLabel" name="arrive" value="<?php echo date('Y-m-d'); ?>">
+          <label for="arrive" class="label-date"><i class="fa fa-calendar"></i>&nbsp;&nbsp;Arrive</label>
+        </div>
+      </div>
+      <div class="col-1-4 col-1-4-sm">
+        <div class="controls">
+          <input type="date" id="depart" class="floatLabel" name="depart" value="<?php echo date('Y-m-d'); ?>" />
+          <label for="depart" class="label-date"><i class="fa fa-calendar"></i>&nbsp;&nbsp;Depart</label>
+        </div>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="col-1-3 col-1-3-sm">
+        <div class="controls">
+          <i class="fa fa-sort"></i>
+          <select class="floatLabel">
+            <option value="blank"></option>
+            <option value="1">1</option>
+            <option value="2" selected>2</option>
+            <option value="3">3</option>
+          </select>
+          <label for="fruit"><i class="fa fa-male"></i>&nbsp;&nbsp;People</label>
+        </div>
+      </div>
+      <div class="col-1-3 col-1-3-sm">
+        <div class="controls">
+          <i class="fa fa-sort"></i>
+          <select class="floatLabel">
+            <option value="blank"></option>
+            <option value="deluxe" selected>With Bathroom</option>
+            <option value="Zuri-zimmer">Without Bathroom</option>
+          </select>
+          <label for="fruit">Room</label>
+        </div>
+      </div>
+
+      <div class="col-1-3 col-1-3-sm">
+        <div class="controls">
+          <i class="fa fa-sort"></i>
+          <select class="floatLabel">
+            <option value="blank"></option>
+            <option value="single-bed">Zweibett</option>
+            <option value="double-bed" selected>Doppelbett</option>
+          </select>
+          <label for="fruit">Bedding</label>
+        </div>
+      </div>
+
+    </div>
+    <div class="grid">
+      <p class="info-text">Please describe your needs e.g. Extra beds, children's cots</p>
+      <br>
+      <div class="controls">
+        <textarea name="comments" class="floatLabel" id="comments"></textarea>
+        <label for="comments">Comments</label>
+      </div>
+      <button type="submit" value="Submit" class="col-1-4">Submit</button>
+    </div>
+  </div> <!-- /.form-group -->
+</form>
+  <footer class="footer_area">
+    <div class="f_container">
+        <div class="footer_widgets">
+            <!-- Social Media -->
+            <div class="social_media">
+                <a href="#" class="social_icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social_icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social_icon" title="github"><i class="fab fa-github"></i></a>
+                <a href="#" class="social_icon" title="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+            <!-- Footer Sections -->
+            <div class="footer_sections">
+                <!-- About Section -->
+                <div class="footer_section">
+                    <h5 class="section_title">About</h5>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Corporate Sale</a></li>
+                        <li><a href="#">Terms & Policy</a></li>
+                        <li><a href="#">Community</a></li>
+                    </ul>
+                </div>
+                <!-- Support Section -->
+                <div class="footer_section">
+                    <h5 class="section_title">Support</h5>
+                    <ul>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <!-- Contact Section -->
+                <div class="footer_section">
+                    <h5 class="section_title">Contact</h5>
+                    <ul>
+                        <li><a href="#">Call Center</a></li>
+                        <li><a href="#">Email Us</a></li>
+                        <li><a href="#">Help Center</a></li>
+                    </ul>
+                </div>
+            </div>
+                
+        </div>
+  <!-- mickey mouse -->
+  <div class="mickey_icon">
+  <img src="images/micky.png" alt="#" class="mickey_icon">
+  </div>
+  <!-- disney castle logo -->
+  <div>
+  <img src="images/pngwing.com.png" alt="#" class="Dcastle">
+  </div>
+    </div>
+  </footer>  
+    <script>
+         
+          function navigo() {
+            const nav = document.querySelector('#nav');
+            const hideStartPosition = 150; // 스크롤 위치가 이 값보다 클 때 메뉴를 숨김
+            const fixedStartPosition = 100; // 스크롤 위치가 이 값보다 클 때 메뉴를 고정
+      
+            document.addEventListener('scroll', onScroll, { passive: true });
+      
+            function onScroll() {
+              const scrollPosition = window.pageYOffset;
+      
+              if (scrollPosition >= fixedStartPosition) {
+                nav.classList.add('fixed');
+              } else {
+                nav.classList.remove('fixed');
+              }
+      
+              if (scrollPosition >= hideStartPosition) {
+                nav.classList.add('hidden');
+              } else {
+                nav.classList.remove('hidden');
+              }
+            }
+          }
+      
+          navigo();
+      
+          (function ($) {
+  function floatLabel(inputType) {
+    $(inputType).each(function () {
+      var $this = $(this);
+      // on focus add cladd active to label
+      $this.focus(function () {
+        $this.next().addClass("active");
+      });
+      //on blur check field and remove class if needed
+      $this.blur(function () {
+        if ($this.val() === "" || $this.val() === "blank") {
+          $this.next().removeClass();
+        }
+      });
+    });
+  }
+  // just add a class of "floatLabel to the input field!"
+  floatLabel(".floatLabel");
+})(jQuery);
+
+
+      
+      
+</script>
+  </body>
+</html>

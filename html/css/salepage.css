@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@charset "utf-8";
+
+a {
+  text-decoration: none;
+}
+
+.inner_container {
+
+  background-color: rgb(35, 53, 136);
+}
+
+/* 지니 */
+#toTop {
+  position: fixed;
+  /* 포지션 고정 */
+  bottom: 180px;
+  /* 밑에서 100px */
+  /* display: none; */
+  /* 보여지지 없음 - 기본적으로 안보여지게 */
+  z-index: 9999;
+  /* 포지션을 먼저 지정후 z-좌표(레이어) : 9999입니다. */
+  left: 87%;
+}
+
+
+
+/* 헤더 */
+header .logo {
+  margin-top: 30px;
+  margin-left: 60px;
+  display: inline-block;
+}
+
+header.inner_container {
+  height: 900px;
+}
+
+header .header_menu ul li {
+  display: inline-block;
+  width: 130px;
+  position: relative;
+  line-height: 40px;
+}
+
+header ul li a {
+  color: #ffffff;
+}
+
+header .header_menu {
+  float: right;
+  margin-top: 30px;
+}
+
+header .header_menu>li:nth-child(5) img {
+  margin-left: 2px;
+  vertical-align: middle;
+}
+
+header .header_menu .bottom_menu {
+  font-size: 16px;
+  font-weight: 300;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+
+.header_menu>ul>li:hover>ul {
+  display: block;
+}
+
+.header_menu>ul>li>ul {
+
+  position: absolute;
+  font-size: 14px;
+  display: none;
+}
+
+
+.header_menu>ul>li>ul>li>a:hover {
+  background: skyblue;
+  transition: ease 1s;
+  padding: 15px;
+
+}
+
+/* Footer Styles */
+.footer_area {
+  background-color: #afafaf80;
+  padding: 63px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 255, 0.1), 0 6px 20px rgba(0, 0, 255, 0.1);
+  position: relative;
+}
+
+.f_container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer_widgets {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.social_media {
+  margin-bottom: 20px;
+}
+
+.social_icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f5f5f5;
+  color: #007bff;
+  text-align: center;
+  line-height: 40px;
+  margin-right: 10px;
+  transition: background-color 0.3s, color 0.3s;
+  text-decoration: none;
+}
+
+.social_icon:hover {
+  background-color: #a1b4ff93;
+  color: #ffffff;
+}
+
+.footer_sections {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer_section {
+  flex: 1;
+  min-width: 200px;
+}
+
+.section_title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.footer_section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer_section ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer_section ul li a {
+  color: #41464ddb;
+  text-decoration: none;
+}
+
+.footer_section ul li a:hover {
+  text-decoration: underline;
+}
+
+.mickey_icon {
+  position: absolute;
+  right: 1rem;
+  top: 40%;
+  width: 100px;
+  height: auto;
+}
+
+.Dcastle {
+  position: absolute;
+  left: 22rem;
+  width: 200px;
+  top: 45%;
+}
