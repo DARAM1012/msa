@@ -389,7 +389,6 @@ INSERT INTO MovieDirector (m_id, d_id) VALUES (98, 50);
 
 
 -- 영화와 배우간의 관계 설정 --
-
 CREATE TABLE MovieActor (
   m_id INT NOT NULL,
   a_id INT NOT NULL,
@@ -407,7 +406,7 @@ INSERT INTO MovieActor (m_id, a_id) VALUES (1, 2); -- 영화: 아가씨, 출연 
 INSERT INTO MovieActor (m_id, a_id) VALUES (2, 3); -- 영화: 박쥐, 출연 배우: 송강호, 김옥빈
 INSERT INTO MovieActor (m_id, a_id) VALUES (2, 4); -- 영화: 박쥐, 출연 배우: 송강호, 김옥빈
 INSERT INTO MovieActor (m_id, a_id) VALUES (3, 5); -- 영화: 올드보이, 출연 배우: 최민식, 유지태
-INSERT INTO MovieActor (m_id, a_ide) VALUES (3, 6); -- 영화: 올드보이, 출연 배우: 최민식, 유지태
+INSERT INTO MovieActor (m_id, a_id) VALUES (3, 6); -- 영화: 올드보이, 출연 배우: 최민식, 유지태
 INSERT INTO MovieActor (m_id, a_id) VALUES (4, 7); -- 영화: 곡성, 출연 배우: 황정민, 곽도원
 INSERT INTO MovieActor (m_id, a_id) VALUES (4, 8); -- 영화: 곡성, 출연 배우: 황정민, 곽도원
 INSERT INTO MovieActor (m_id, a_id) VALUES (5, 2); -- 영화: 황해, 출연 배우: 하정우, 김윤석
@@ -632,4 +631,4 @@ JOIN MovieDirector md ON m.m_id = md.m_id
 JOIN Director d ON md.d_id = d.d_id
 JOIN MovieActor ma ON m.m_id = ma.m_id
 JOIN Actor a ON ma.a_id = a.a_id
-WHERE a.a_name = '황정민';  -- 배우 이름을 여기에 입력
+WHERE a.a_name = '하정우';  -- 배우 이름을 여기에 입력
