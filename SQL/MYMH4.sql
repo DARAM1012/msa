@@ -57,6 +57,7 @@ INSERT INTO Director(d_name,d_gender) VALUES('홍상수','남');
 INSERT INTO Director(d_name,d_gender) VALUES('정범식','남');
 INSERT INTO Director(d_name,d_gender) VALUES('이연우','남');
 INSERT INTO Director(d_name,d_gender) VALUES('장재현','남');
+INSERT INTO Director(d_name,d_gender) VALUES('함영선','여');
 
 
 CREATE TABLE Actor (
@@ -163,6 +164,7 @@ INSERT INTO Actor (a_name, a_gender) VALUES ('김의성', '남');
 INSERT INTO Actor (a_name, a_gender) VALUES ('박진성', '남');
 INSERT INTO Actor (a_name, a_gender) VALUES ('위하준', '남');
 INSERT INTO Actor (a_name, a_gender) VALUES ('박지현', '여');
+INSERT INTO Actor (a_name, a_gender) VALUES ('탁태호', '남');
 
 
 
@@ -421,7 +423,10 @@ INSERT INTO Movie ( m_name,  m_genre, o_date,  outline) VALUES
 ('괴물', '드라마', '2006-07-27', '괴물과의 싸움과 가족의 이야기를 그린 드라마.'),
 ('시민덕희', '드라마', '2021-05-12', '시민과 사회의 문제를 다룬 드라마.'),
 ('공조2: 인터내셔널', '액션', '2022-09-07', '국제적인 범죄와의 싸움을 그린 액션 영화.'),
-('창궐', '액션', '2018-10-25', '좀비와의 전투를 다룬 액션 영화.');
+('창궐', '액션', '2018-10-25', '좀비와의 전투를 다룬 액션 영화.'),
+('목요명화', '스릴러', '2024-09-12', '자바와의 전투를 다룬 스릴러 영화.');
+
+
 
 -- 영화와 감독간의 관계 설정 --
 CREATE TABLE MovieDirector (
@@ -532,7 +537,7 @@ INSERT INTO MovieDirector (m_id, d_id) VALUES (95, 47);
 INSERT INTO MovieDirector (m_id, d_id) VALUES (96, 48);
 INSERT INTO MovieDirector (m_id, d_id) VALUES (97, 49);
 INSERT INTO MovieDirector (m_id, d_id) VALUES (98, 50);
-
+INSERT INTO MovieDirector (m_id, d_id) VALUES (247, 51);
 
 
 -- 영화와 배우간의 관계 설정 --
@@ -739,6 +744,9 @@ INSERT INTO MovieActor (m_id, a_id) VALUES (97, 72); -- 영화: 피끓는 청춘
 INSERT INTO MovieActor (m_id, a_id) VALUES (97, 40); -- 영화: 피끓는 청춘, 출연 배우: 박보영, 이종석
 INSERT INTO MovieActor (m_id, a_id) VALUES (98, 5); -- 영화: 파묘, 출연 배우: 최민식, 김고은
 INSERT INTO MovieActor (m_id, a_id) VALUES (98, 34); -- 영화: 파묘, 출연 배우: 최민식, 김고은
+INSERT INTO MovieActor (m_id, a_id) VALUES (247, 98); -- 영화: 목요명화, 출연 배우: 탁태호
+
+
 
 
 -- 감독 이름으로 연출한 영화 조회--
@@ -778,5 +786,5 @@ JOIN MovieDirector md ON m.m_id = md.m_id
 JOIN Director d ON md.d_id = d.d_id
 JOIN MovieActor ma ON m.m_id = ma.m_id
 JOIN Actor a ON ma.a_id = a.a_id
-WHERE a.a_name = '황정민';  -- 배우 이름을 여기에 입력
+WHERE a.a_name = '탁태호';  -- 배우 이름을 여기에 입력
 
