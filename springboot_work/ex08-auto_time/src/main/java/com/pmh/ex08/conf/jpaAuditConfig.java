@@ -11,6 +11,7 @@ public class jpaAuditConfig {
 
     @Bean
     public AuditorAware<String> auditorAware(){
+
         AuditorAware<String> auditorAware =
                 () -> Optional.of("다람이");
 

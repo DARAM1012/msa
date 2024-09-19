@@ -1,7 +1,9 @@
 <template>
   <div>
-    <h1>Freeboard</h1>
+    <h1 class="aaa">Freeboard</h1>
     <div class="p-5">
+      title = {{ title }}
+      content = {{ content }}
       <input
         v-model="title"
         type="text"
@@ -26,9 +28,13 @@
 <script setup>
 import axios from 'axios'
 import { ref } from 'vue'
+import { useRouter } from 'vue-router';
 
 const title = ref('')
 const content = ref('')
+
+const router = useRouter();
+
 const save = () => {
   const data = {
     title: title.value,
@@ -37,11 +43,15 @@ const save = () => {
   // console.log(data);
   axios
     .post('http://localhost:8080/freeboard', data)
-    .then((res) => {
-      console.log(res.data)
+    .then(res => {
+      console.log(res);
+      alert('저장하였습니다.');
+      router.push({name:"freeboardlist", params:{aa:10,bb:"안녕하세요"}
+    })
     })
     .catch((e) => {
-      console.log(e)
+      console.log(e);
+     alert('에러'+e.response.data.message);
     })
 }
 </script>
