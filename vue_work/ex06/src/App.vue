@@ -14,7 +14,7 @@ import { RouterLink, RouterView } from 'vue-router'
         </div>
         <div class="group relative">
           <RouterLink to="/freeboardlist">Freeboard</RouterLink>
-          <div class="hidden group-hover:block absolute bg-slate-400 p-5 rounded">
+          <div class="hidden group-hover:block absolute bg-pink-300 p-5 rounded opacity-90">
             <div>
               <RouterLink to="/freeboardlist">Freeboardlist</RouterLink>
             </div>

@@ -1,15 +1,16 @@
-package com.pmh.ex08.FreeBoard;
+package com.pmh.ex09.FreeBoard;
 
+import com.pmh.ex09.error.BizException;
+import com.pmh.ex09.error.ErrorCode;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
-import org.modelmapper.internal.bytebuddy.TypeCache;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.format.DateTimeFormatter;
@@ -20,22 +21,19 @@ import java.util.List;
 @RequestMapping("freeboard")
 @RequiredArgsConstructor
 @CrossOrigin
+@Slf4j
 public class FreeBoardController {
 
     private final FreeBoardRepository freeBoardRepository;
+    private final ModelMapper modelMapper;
 
     @GetMapping
     public ResponseEntity<FreeBoardResPageDto> findAll(@RequestParam(name = "pageNum", defaultValue = "0") int pageNum
-            , @RequestParam(name = "size",defaultValue = "5") int size) {
+            , @RequestParam(name = "size", defaultValue = "5") int size) {
 
 
-        // select * from freeboard oder by idx desc, name desc,
         Sort sort = Sort.by(Sort.Direction.DESC, "idx");
 
-//        int pageNum = 0;
-//        int size = 10;
-
-        // Page List
         Pageable pageable = PageRequest.of(pageNum, size, sort);
 
         Page<FreeBoard> page = freeBoardRepository.findAll(pageable);
@@ -49,22 +47,37 @@ public class FreeBoardController {
                 .map(page, FreeBoardResPageDto.class);
 
         List<FreeboardResponseDto> list = new ArrayList<>();
-        for (FreeBoard freeBoard : freeBoardResPageDto.getContent()){
+        for (FreeBoard freeBoard : freeBoardResPageDto.getContent()) {
             FreeboardResponseDto freeboardResponseDto
-                    = new ModelMapper().map(freeBoard,FreeboardResponseDto.class);
+                    = new ModelMapper().map(freeBoard, FreeboardResponseDto.class);
             DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yy년MM월dd일 hh:mm");
 
             freeboardResponseDto.setRegDate(dateTimeFormatter.format(freeBoard.getRegDate()));
             freeboardResponseDto.setModDate(dateTimeFormatter.format(freeBoard.getModDate()));
 
-                list.add(freeboardResponseDto);
-        };
+            list.add(freeboardResponseDto);
+        }
+        ;
         freeBoardResPageDto.setList(list);
 
         return ResponseEntity.ok(freeBoardResPageDto);
 //        return ResponseEntity.ok(list.get().toList());
     }
 
+    @GetMapping("view/{idx}")
+    public ResponseEntity<FreeboardResponseDto> findOne(@PathVariable(name = "idx") long idx) {
+
+        FreeBoard freeBoard = freeBoardRepository.findById(idx).orElseThrow(()-> new BizException(ErrorCode.Not_Found));
+
+        FreeboardResponseDto freeboardResponseDto = modelMapper.map(freeBoard, FreeboardResponseDto.class);
+
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yy년MM월dd일 hh:mm");
+
+        freeboardResponseDto.setRegDate(dateTimeFormatter.format(freeBoard.getRegDate()));
+        freeboardResponseDto.setModDate(dateTimeFormatter.format(freeBoard.getModDate()));
+
+        return ResponseEntity.ok(freeboardResponseDto);
+    }
 
     @PostMapping
     public ResponseEntity<FreeBoard> save(@Valid @RequestBody FreeBoardReqDto freeBoardReqDto) {
@@ -74,4 +87,12 @@ public class FreeBoardController {
         return ResponseEntity.status(200).body(freeBoard);
 
     }
+
+    @DeleteMapping("delete/{idx}")
+    public ResponseEntity<String> deleteById(@PathVariable(name="idx")long idx){
+        freeBoardRepository.findById(idx).orElseThrow(()-> new BizException(ErrorCode.Not_Found));
+        freeBoardRepository.deleteById(idx);
+        return  ResponseEntity.ok("삭제되었습니다");
+    }
+
 }
