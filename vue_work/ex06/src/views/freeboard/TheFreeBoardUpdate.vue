@@ -27,14 +27,14 @@
 import axios from 'axios'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-// useRoute,
+
 const title = ref('')
 const content = ref('')
 // const regDate = ref('')
 // const creAuthor = ref('')
 // const idx = ref(0);
 
-const router = useRouter();
+const router = useRouter()
 // const route = useRoute();
 
 // const getFreeBoard = () => {
