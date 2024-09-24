@@ -2,7 +2,7 @@
   <div>
     <h1 class="h1-red">TheFreeBoardView</h1>
     <div class="p-5">
-      <Div class="border border-b-slate-400 rounded p-3">
+      <div class="border border-b-slate-400 rounded p-3">
         <h1 class="font-bold">
           글제목 <span class="font-normal">{{ title }}</span>
         </h1>
@@ -11,7 +11,7 @@
         <p class="h-64">{{ content }}</p>
         <h1>작성일자 {{ regDate }}</h1>
         <h1>작성자 {{ creAuthor }}</h1>
-      </Div>
+      </div>
       <div class="flex justify-between mt-5">
         <button
           class="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300"
@@ -37,6 +37,7 @@ import { useRoute, useRouter } from 'vue-router'
 
 const route = useRoute()
 const router = useRouter()
+
 const title = ref('초기값')
 const content = ref('초기값')
 const regDate = ref('초기값')
@@ -55,7 +56,7 @@ const doDelete = (idx)=>{
 }
 
 const pageMove = ()=>{
-    router.push({name:"freeboardinput",query:{idx:idx.value}});
+    router.push({name:"freeboardupdate",query:{idx:idx.value}});
 }
 
 const getFreeBoard = () => {

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="aaa">Freeboard</h1>
+    <h1 class="aaa">freeboardupdate</h1>
     <div class="p-5">
       <input
         v-model="title"
@@ -18,7 +18,7 @@
       class="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300"
       @click="save"
     >
-      저장
+      수정
     </button>
   </div>
 </template>
@@ -26,51 +26,54 @@
 <script setup>
 import axios from 'axios'
 import { ref } from 'vue'
-import { useRouter } from 'vue-router'
+import { useRoute,useRouter } from 'vue-router'
 
 const title = ref('')
 const content = ref('')
-// const regDate = ref('')
-// const creAuthor = ref('')
-// const idx = ref(0);
+const regDate = ref('')
+const creAuthor = ref('')
+const idx = ref(0);
+const router = useRouter();
+const route = useRoute();
 
-const router = useRouter()
-// const route = useRoute();
+const getFreeBoard = ()=>{
+  axios.get(`http://localhost:10000/freeboard/view/${route.query.idx}`)
+    .then(res => {
+        title.value = res.data.title;
+        content.value = res.data.content;
+        regDate.value = res.data.regDate;
+        creAuthor.value = res.data.creAuthor;
+        idx.value = res.data.idx;
+    })
+    .catch((e) => {
+      console.log(e)
+      alert(e.response.data.message)
+      router.push({name:'freeboardlist'})
+    })
+}
 
-// const getFreeBoard = () => {
-//   axios.get(`http://localhost:8080/freeboard/view/${route.params.idx}`)
-//     .then(res => {
-//         title.value = res.data.title;
-//         content.value = res.data.content;
-//         regDate.value = res.data.regDate;
-//         creAuthor.value = res.data.creAuthor;
-//         idx.value = res.data.idx;
-//     })
-//     .catch((e) => {
-//       console.log(e)
-//       alert(e.response.data.message)
-//       router.push({name:'freeboardlist'})
-//     })
-// }
+
 
 const save = () => {
   const data = {
+    idx: route.query.idx,
     title: title.value,
     content: content.value
-  }
-  // console.log(data);
+  };
   axios
     .post('http://localhost:10000/freeboard', data)
     .then((res) => {
       console.log(res)
       alert('저장하였습니다.')
-      router.push({ name: 'freeboardlist', params: { aa: 10, bb: '안녕하세요' } })
+      router.push({ name: 'freeboardlist' })
     })
     .catch((e) => {
       console.log(e)
       alert('에러' + e.response.data.message)
     })
-}
+};
+
+getFreeBoard();
 </script>
 
 <style scoped>

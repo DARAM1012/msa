@@ -20,8 +20,11 @@ import { RouterLink, RouterView } from 'vue-router'
             </div>
             <div>
               <RouterLink to="/freeboardinput">Freeboardinput</RouterLink>
-            </div>   
+            </div>
           </div>
+        </div>
+        <div>
+          <RouterLink to="/fileupload">fileupload</RouterLink>
         </div>
       </nav>
     </div>
