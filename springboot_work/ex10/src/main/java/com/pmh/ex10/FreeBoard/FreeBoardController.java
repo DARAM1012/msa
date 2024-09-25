@@ -2,18 +2,25 @@ package com.pmh.ex10.FreeBoard;
 
 import com.pmh.ex10.error.BizException;
 import com.pmh.ex10.error.ErrorCode;
+import com.pmh.ex10.file.FileEntity;
+import com.pmh.ex10.file.FileRepository;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.ssl.SslProperties;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.nio.file.Paths;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +33,7 @@ import java.util.List;
 public class FreeBoardController {
 
     private final FreeBoardRepository freeBoardRepository;
+    private final FileRepository fileRepository;
     private final ModelMapper modelMapper;
 
     @Value("${my.value}")
@@ -78,6 +86,8 @@ public class FreeBoardController {
 
         FreeBoard freeBoard = freeBoardRepository.findById(idx).orElseThrow(()-> new BizException(ErrorCode.Not_Found));
 
+        System.out.println(freeBoard.getList());
+
         FreeboardResponseDto freeboardResponseDto = modelMapper.map(freeBoard, FreeboardResponseDto.class);
 
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yy년MM월dd일 hh:mm");
@@ -88,11 +98,37 @@ public class FreeBoardController {
         return ResponseEntity.ok(freeboardResponseDto);
     }
 
-    @PostMapping
-    public ResponseEntity<FreeBoard> save(@Valid @RequestBody FreeBoardReqDto freeBoardReqDto) {
+    @PostMapping(
+            produces = MediaType.APPLICATION_JSON_VALUE,
+            consumes = MediaType.MULTIPART_FORM_DATA_VALUE
+    )
+    public ResponseEntity<FreeBoard> save(
+            @Valid @RequestPart(name = "data") FreeBoardReqDto freeBoardReqDto,
+            @RequestPart(name = "file",required = false) MultipartFile file) {
+
+        System.out.println(freeBoardReqDto);
+        if (file != null){
+//            System.out.println(file.getOriginalFilename());
+            String myFilePath = Paths.get("ex10/images/file/").toAbsolutePath()+"\\"+file.getOriginalFilename();
+            try {
+                File destFile = new File(myFilePath);
+                file.transferTo(destFile);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+
+
         FreeBoard freeBoard = new ModelMapper().map(freeBoardReqDto, FreeBoard.class);
-        System.out.println(freeBoard);
         freeBoardRepository.save(freeBoard);
+
+        FileEntity fileEntity = new FileEntity();
+        fileEntity.setName(file.getOriginalFilename());
+        fileEntity.setPath(Paths.get("images/file/").toAbsolutePath().toString());
+        fileEntity.setFreeBoard(freeBoard);
+
+        fileRepository.save(fileEntity);
+
         return ResponseEntity.status(200).body(freeBoard);
 
     }

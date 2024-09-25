@@ -12,6 +12,10 @@
         <h1>작성일자 {{ regDate }}</h1>
         <h1>작성자 {{ creAuthor }}</h1>
       </div>
+      <div v-for="item in list" :key="item">
+        <img :src="`http://localhost:10000/file/download/${item.name}`" width="300" alt="">
+        {{ item.name }}
+      </div>
       <div class="flex justify-between mt-5">
         <button
           class="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300"
@@ -42,6 +46,7 @@ const title = ref('초기값')
 const content = ref('초기값')
 const regDate = ref('초기값')
 const creAuthor = ref('초기값')
+const list = ref([]);
 const idx = ref(0);
 
 const doDelete = (idx)=>{
@@ -67,6 +72,8 @@ const getFreeBoard = () => {
         regDate.value = res.data.regDate;
         creAuthor.value = res.data.creAuthor;
         idx.value = res.data.idx;
+        list.value = res.data.list;
+        console.log(res.data.list);
     })
     .catch((e) => {
       console.log(e)
