@@ -7,7 +7,7 @@
     </ul>
   </div>
   <div class="image-container">
-    <img src="D:/work/w9w9/w9w9/src/assets/header.jpg" alt="Header Image" />
+    <img src="D:/work/w9w9/w9w9/src/assets/header2.jpg" alt="Header Image" />
   </div>
 </template>
 
@@ -38,6 +38,6 @@ li {
   text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.7); /* 그림자 추가 */
 }
 .image-container img {
-  width: 1902px; /* 원하는 넓이로 조정 (예: 80%) */
+  width: 1902px; /* 원하는 넓이로 조정*/
 }
 </style>
