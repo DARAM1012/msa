@@ -40,7 +40,7 @@ public class FreeBoardController {
     private String welcome;
 
     @GetMapping("test")
-    public  String test(){
+    public String test() {
         return welcome;
     }
 
@@ -84,14 +84,13 @@ public class FreeBoardController {
     @GetMapping("view/{idx}")
     public ResponseEntity<FreeboardResponseDto> findOne(@PathVariable(name = "idx") long idx) {
 
-        FreeBoard freeBoard = freeBoardRepository.findById(idx).orElseThrow(()-> new BizException(ErrorCode.Not_Found));
+        FreeBoard freeBoard = freeBoardRepository.findById(idx).orElseThrow(() -> new BizException(ErrorCode.Not_Found));
 
-        System.out.println(freeBoard.getList());
+        freeBoard.setView_count(freeBoard.getView_count()+1);
+        freeBoardRepository.save(freeBoard);
 
         FreeboardResponseDto freeboardResponseDto = modelMapper.map(freeBoard, FreeboardResponseDto.class);
-
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yy년MM월dd일 hh:mm");
-
         freeboardResponseDto.setRegDate(dateTimeFormatter.format(freeBoard.getRegDate()));
         freeboardResponseDto.setModDate(dateTimeFormatter.format(freeBoard.getModDate()));
 
@@ -104,40 +103,36 @@ public class FreeBoardController {
     )
     public ResponseEntity<FreeBoard> save(
             @Valid @RequestPart(name = "data") FreeBoardReqDto freeBoardReqDto,
-            @RequestPart(name = "file",required = false) MultipartFile file) {
-
-        System.out.println(freeBoardReqDto);
-        if (file != null){
-//            System.out.println(file.getOriginalFilename());
-            String myFilePath = Paths.get("ex10/images/file/").toAbsolutePath()+"\\"+file.getOriginalFilename();
-            try {
-                File destFile = new File(myFilePath);
-                file.transferTo(destFile);
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-        }
-
+            @RequestPart(name = "file", required = false) MultipartFile file) {
 
         FreeBoard freeBoard = new ModelMapper().map(freeBoardReqDto, FreeBoard.class);
         freeBoardRepository.save(freeBoard);
 
-        FileEntity fileEntity = new FileEntity();
-        fileEntity.setName(file.getOriginalFilename());
-        fileEntity.setPath(Paths.get("images/file/").toAbsolutePath().toString());
-        fileEntity.setFreeBoard(freeBoard);
+        if (file != null) {
+            String myFilePath = Paths.get("ex10/images/file/").toAbsolutePath() + "\\" + file.getOriginalFilename();
+            try {
+                File destFile = new File(myFilePath);
+                file.transferTo(destFile);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
-        fileRepository.save(fileEntity);
+            FileEntity fileEntity = new FileEntity();
+            fileEntity.setName(file.getOriginalFilename());
+            fileEntity.setPath(Paths.get("images/file/").toAbsolutePath().toString());
+            fileEntity.setFreeBoard(freeBoard);
+            fileRepository.save(fileEntity);
 
+        }
         return ResponseEntity.status(200).body(freeBoard);
 
     }
 
     @DeleteMapping("delete/{idx}")
-    public ResponseEntity<String> deleteById(@PathVariable(name="idx")long idx){
-        freeBoardRepository.findById(idx).orElseThrow(()-> new BizException(ErrorCode.Not_Found));
+    public ResponseEntity<String> deleteById(@PathVariable(name = "idx") long idx) {
+        freeBoardRepository.findById(idx).orElseThrow(() -> new BizException(ErrorCode.Not_Found));
         freeBoardRepository.deleteById(idx);
-        return  ResponseEntity.ok("삭제되었습니다");
+        return ResponseEntity.ok("삭제되었습니다");
     }
 
 }

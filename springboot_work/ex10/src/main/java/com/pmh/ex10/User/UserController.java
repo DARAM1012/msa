@@ -20,7 +20,11 @@ public class UserController {
 
     @GetMapping("select")
     public ResponseEntity<List<User>> select() {
-        return ResponseEntity.status(200).body(userRepository.findAll());
+
+        List<User> list = userRepository.findAll();
+
+        return ResponseEntity.status(200)
+                             .body(list);
     }
 
     @PostMapping("insert")

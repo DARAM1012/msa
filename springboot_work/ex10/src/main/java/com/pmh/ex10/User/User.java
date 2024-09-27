@@ -1,10 +1,13 @@
 package com.pmh.ex10.User;
 
+import com.pmh.ex10.FreeBoard.FreeBoard;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 /*
     @Configuraion -> 객체 담는통 정의
@@ -48,4 +51,6 @@ public class User {
 
     // JPA CLASS -> talbe CREATE가 됩니다.
 
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    private List<FreeBoard> list = new ArrayList<>();
 }

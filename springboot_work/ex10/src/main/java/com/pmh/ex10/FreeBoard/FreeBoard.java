@@ -1,5 +1,6 @@
 package com.pmh.ex10.FreeBoard;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.pmh.ex10.User.User;
 import com.pmh.ex10.file.FileEntity;
 import jakarta.persistence.*;
@@ -33,6 +34,7 @@ public class FreeBoard {
     private String content;
 
     @ManyToOne(cascade = CascadeType.ALL)
+    @JsonIgnore
     private User user;
 
     @CreatedBy
@@ -51,7 +53,7 @@ public class FreeBoard {
     @Column(columnDefinition = "int default 0")
     private int view_count;
 
-    @OneToMany(fetch = FetchType.EAGER,mappedBy = "freeBoard")
+    @OneToMany(fetch = FetchType.EAGER,mappedBy = "freeBoard", cascade = CascadeType.ALL)
     private List<FileEntity> list = new ArrayList<>();
 
 }

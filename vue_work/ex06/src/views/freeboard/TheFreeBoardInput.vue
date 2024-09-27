@@ -33,12 +33,11 @@ import { useRouter } from 'vue-router'
 
 const title = ref('')
 const content = ref('')
-const myfile = ref(null);
+const myfile = ref(null)
 const router = useRouter()
 
-const onFileChange = (e)=>{
-  myfile.value = e.target.files[0];
-
+const onFileChange = (e) => {
+  myfile.value = e.target.files[0]
 }
 
 const save = () => {
@@ -48,12 +47,8 @@ const save = () => {
   }
 
   const formData = new FormData()
-  formData.append('data', new Blob(
-                           [JSON.stringify(data)],
-                           { type: 'application/json' }
-                          )
-                        )
-  formData.append("file",myfile.value);
+  formData.append('data', new Blob([JSON.stringify(data)], { type: 'application/json' }))
+  formData.append('file', myfile.value)
 
   axios
     .post('http://localhost:10000/freeboard', formData, {
