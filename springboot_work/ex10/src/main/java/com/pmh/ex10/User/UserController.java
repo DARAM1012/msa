@@ -16,7 +16,7 @@ import java.util.List;
 public class UserController {
 
     private final UserRepository userRepository;
-    private final UserService userService;
+    private final UserServiceImpl userService;
 
     @GetMapping("select")
     public ResponseEntity<List<User>> select() {
@@ -28,9 +28,9 @@ public class UserController {
     }
 
     @PostMapping("insert")
-    public ResponseEntity<String> insert(@Valid @RequestBody UserReDto userReDto) {
+    public ResponseEntity<String> insert(@Valid @RequestBody UserReqDto userReqDto) {
 
-        userService.insert(userReDto);
+        userService.insert(userReqDto);
         // select * from where idx = ?
 //        userRepository.findAll()
         // select * from where email = ?
@@ -40,14 +40,12 @@ public class UserController {
     }
 
     @PutMapping("update")
-    public ResponseEntity<String> update(@Valid @RequestBody UserReDto userReDto) {
-        System.out.println("실행" + userReDto);
+    public ResponseEntity<String> update(@Valid @RequestBody UserReqDto userReqDto){
 
-        ModelMapper modelMapper = new ModelMapper();
-        User user = modelMapper.map(userReDto, User.class);
-        System.out.println("user = " + user);
-        userRepository.save(user);
-        return ResponseEntity.status(200).body("successful update");
+        System.out.println("일로오나");
+        userService.update(userReqDto);
+
+        return ResponseEntity.status(200).body("success update");
     }
 
     @DeleteMapping("delete/{idx}")
