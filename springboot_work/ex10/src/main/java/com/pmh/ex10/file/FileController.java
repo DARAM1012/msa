@@ -60,7 +60,7 @@ public class FileController {
             System.out.println(imagePath.toAbsolutePath().toString());
 
             // 전체 경로+파일 이름
-            String myFilePath = imagePath.toAbsolutePath().toString() + "/" + file.getOriginalFilename();
+            String myFilePath = imagePath.toAbsolutePath()+File.separator+ file.getOriginalFilename();
             System.out.println(myFilePath);
 
             File saveFile = new File(myFilePath);

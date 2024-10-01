@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 
 // 프론트에서 오는 파라메타의 검사
 @Data
-public class UserReDto {
+public class UserReqDto {
     private Long idx;
 
     @Length(min = 2,max = 100)
