@@ -38,6 +38,7 @@ public class FreeBoard {
     private User user;
 
     @CreatedBy
+    @Column(updatable = false)
     private String creAuthor;
 
     @LastModifiedBy
@@ -56,4 +57,18 @@ public class FreeBoard {
     @OneToMany(fetch = FetchType.EAGER,mappedBy = "freeBoard", cascade = CascadeType.ALL)
     private List<FileEntity> list = new ArrayList<>();
 
+    @Override
+    public String toString() {
+        return "FreeBoard{" +
+                "idx=" + idx +
+                ", title='" + title + '\'' +
+                ", content='" + content + '\'' +
+                ", creAuthor='" + creAuthor + '\'' +
+                ", modAuthor='" + modAuthor + '\'' +
+                ", regDate=" + regDate +
+                ", modDate=" + modDate +
+                ", view_count=" + view_count +
+                ", list=" + list +
+                '}';
+    }
 }

@@ -22,4 +22,14 @@ export const saveUser = async (item) => {
     return e;
   }
 }
-export const deleteUser = () => {}
+export const deleteUser = async(idx) => {
+
+  try{
+    const res = await axios.delete(`${URL}/delete/${idx}`);
+    return res;
+  }catch(e){
+      console.log(e);
+      return e;
+  }
+
+}

@@ -18,7 +18,7 @@ import java.util.List;
     private final -> @RequiredArgsConstructor -> 객체 자동할당
 
     @Entity -> 이거 테이블이야
-    @Table -> table 이름 바꾸께
+    @Table -> table 이름 바꿀게
     @Id -> 기본키야 Primary 키야
  */
 
