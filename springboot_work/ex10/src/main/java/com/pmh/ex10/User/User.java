@@ -4,6 +4,8 @@ import com.pmh.ex10.FreeBoard.FreeBoard;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import lombok.*;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -30,6 +32,7 @@ import java.util.List;
 @ToString
 @Getter
 @Setter
+@EntityListeners(AuditingEntityListener.class)
 // Table 정의
 public class User {
 
@@ -47,6 +50,11 @@ public class User {
     @Column(length = 100)
     private String password;
 
+    //    테이블 create 하면서 role(역할-user or admin or user등급 등등) 컬럼 추가
+    private String role;
+
+    @CreatedDate
+    @Column(updatable = false)
     private LocalDateTime wdate;
 
     // JPA CLASS -> talbe CREATE가 됩니다.

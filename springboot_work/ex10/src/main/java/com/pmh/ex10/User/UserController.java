@@ -1,12 +1,14 @@
 package com.pmh.ex10.User;
 
 
+import com.pmh.ex10.FreeBoard.FreeBoardRepository;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -16,6 +18,7 @@ import java.util.List;
 public class UserController {
 
     private final UserRepository userRepository;
+    private final FreeBoardRepository freeBoardRepository;
     private final UserServiceImpl userService;
 
     @GetMapping("select")
@@ -24,7 +27,7 @@ public class UserController {
         List<User> list = userRepository.findAll();
 
         return ResponseEntity.status(200)
-                             .body(list);
+                .body(list);
     }
 
     @PostMapping("insert")
@@ -40,7 +43,7 @@ public class UserController {
     }
 
     @PutMapping("update")
-    public ResponseEntity<String> update(@Valid @RequestBody UserReqDto userReqDto){
+    public ResponseEntity<String> update(@Valid @RequestBody UserReqDto userReqDto) {
 
         System.out.println("일로오나");
         userService.update(userReqDto);
@@ -50,7 +53,21 @@ public class UserController {
 
     @DeleteMapping("delete/{idx}")
     public ResponseEntity<String> delete(@PathVariable("idx") long idx) {
-        userRepository.deleteById(idx);
-        return ResponseEntity.status(200).body("successful delete");
+
+        //유저 삭제시 작성한 글을 삭제하기 싫으면
+        User dbUser = userRepository.findById(idx).orElseThrow();
+
+        dbUser
+                .getList()
+                .stream()
+                .forEach(freeBoard -> {
+                    freeBoard.setUser(null);
+                    freeBoardRepository.save(freeBoard);
+                });
+
+        dbUser.setList(new ArrayList<>());
+        userRepository.delete(dbUser);
+
+        return ResponseEntity.status(200).body("success delete");
     }
 }

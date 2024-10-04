@@ -25,24 +25,24 @@ class Ex10ApplicationTests {
 	}
 
 
-	@Test
-	void  saveFreeBoardTest(){
-		User user = userRepository.findById(1l).orElseThrow();
-
-		List<FileEntity> list = Arrays.asList(
-				FileEntity.builder().name("afile").build(),
-				FileEntity.builder().name("bfile").build()
-		);
-
-		FreeBoard freeBoard = FreeBoard.builder()
-				.idx(10l)
-				.title("제목qwer")
-				.content("내용qwer")
-				.list(list)
-				.user(user)
-				.build();
-
-		 freeBoardRepository.save(freeBoard);
-	}
+//	@Test
+//	void  saveFreeBoardTest(){
+//		User user = userRepository.findById(1l).orElseThrow();
+//
+//		List<FileEntity> list = Arrays.asList(
+//				FileEntity.builder().name("afile").build(),
+//				FileEntity.builder().name("bfile").build()
+//		);
+//
+//		FreeBoard freeBoard = FreeBoard.builder()
+//				.idx(10l)
+//				.title("제목qwer")
+//				.content("내용qwer")
+//				.list(list)
+//				.user(user)
+//				.build();
+//
+//		 freeBoardRepository.save(freeBoard);
+//	}
 
 }

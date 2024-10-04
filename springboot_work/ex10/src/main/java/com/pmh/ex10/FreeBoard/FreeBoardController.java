@@ -53,12 +53,8 @@ public class FreeBoardController {
     @GetMapping
     public ResponseEntity<FreeBoardResPageDto> findAll(@RequestParam(name = "pageNum", defaultValue = "0") int pageNum
             , @RequestParam(name = "size", defaultValue = "5") int size) {
-
-
         Sort sort = Sort.by(Sort.Direction.DESC, "idx");
-
         Pageable pageable = PageRequest.of(pageNum, size, sort);
-
         Page<FreeBoard> page = freeBoardRepository.findAll(pageable);
 
         System.out.println("elements = " + page.getTotalElements());
@@ -72,11 +68,19 @@ public class FreeBoardController {
         for (FreeBoard freeBoard : freeBoardResPageDto.getContent()) {
             FreeboardResponseDto freeboardResponseDto
                     = new ModelMapper().map(freeBoard, FreeboardResponseDto.class);
-            DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yy년MM월dd일 hh:mm");
 
-            freeboardResponseDto.setCreAuthor(freeBoard.getUser().getName());
+            DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yy년MM월dd일 hh:mm");
             freeboardResponseDto.setRegDate(dateTimeFormatter.format(freeBoard.getRegDate()));
             freeboardResponseDto.setModDate(dateTimeFormatter.format(freeBoard.getModDate()));
+
+            if(freeBoard.getUser()!=null) {
+                freeboardResponseDto.setCreAuthor(freeBoard.getUser().getName());
+                freeboardResponseDto.setModAuthor(freeBoard.getUser().getName());
+                freeboardResponseDto.setUserIdx(freeBoard.getUser().getIdx());
+            }else {
+                freeboardResponseDto.setCreAuthor("탈퇴한회원");
+                freeboardResponseDto.setModAuthor("탈퇴한회원");
+            }
 
             list.add(freeboardResponseDto);
         }
@@ -100,8 +104,14 @@ public class FreeBoardController {
         freeboardResponseDto.setRegDate(dateTimeFormatter.format(freeBoard.getRegDate()));
         freeboardResponseDto.setModDate(dateTimeFormatter.format(freeBoard.getModDate()));
 
-        freeboardResponseDto.setCreAuthor(freeBoard.getUser().getName());
-        freeboardResponseDto.setModAuthor(freeBoard.getUser().getName());
+        if(freeBoard.getUser()!=null) {
+            freeboardResponseDto.setCreAuthor(freeBoard.getUser().getName());
+            freeboardResponseDto.setModAuthor(freeBoard.getUser().getName());
+        }
+        else {
+            freeboardResponseDto.setCreAuthor("탈퇴한회원");
+            freeboardResponseDto.setModAuthor("탈퇴한회원");
+        }
         freeboardResponseDto.setUserIdx(freeBoard.getUser().getIdx());
 
 
@@ -160,9 +170,22 @@ public class FreeBoardController {
 
     @DeleteMapping("delete/{idx}")
     public ResponseEntity<String> deleteById(@PathVariable(name = "idx") long idx) {
-        freeBoardRepository.findById(idx).orElseThrow(() -> new BizException(ErrorCode.Not_Found));
-        freeBoardRepository.deleteById(idx);
-        return ResponseEntity.ok("삭제되었습니다");
+
+        FreeBoard freeBoard = freeBoardRepository.findById(idx)
+                .orElseThrow(() -> new BizException(ErrorCode.Not_Found));
+
+//        freeBoard.setList(new ArrayList<>());
+        freeBoard.setUser(null);
+        freeBoardRepository.save(freeBoard);
+        freeBoardRepository.delete(freeBoard);
+
+//        fileRepository.findByFreeBoardIdx(
+//                freeBoard.getIdx()).forEach(fileEntity -> {
+//            fileRepository.deleteById(fileEntity.getIdx());
+//        });
+//        freeBoardRepository.cusDeleteByIdx(idx);
+
+        return ResponseEntity.ok("삭제되었습니다.");
     }
 
 }
