@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.h1-red{
+  font-size: 5rem;
+  color : red;
+}
+
+.min-height-100 {
+  @apply min-h-screen;
+  min-height: calc(100vh - 80px);
+}
