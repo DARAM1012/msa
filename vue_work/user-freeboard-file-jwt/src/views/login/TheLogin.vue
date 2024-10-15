@@ -41,17 +41,17 @@ const router = useRouter();
 
 const loginPinia = useLoginStore();
 
-
 const submitLogin = async () => {
-    const data = { "email": email.value, "password": password.value };
+    const data = { "email": email.value, 
+                   "password": password.value };
     const res = await doLogin(data);
     localStorage.setItem('token', res.data);
     if(res.status==200){
-        alert('로그인 성공');
         const result = await doLoginCheck();
-        console.log(result.data);
-        loginPinia.login(result.data);
+        loginPinia.login(result.data); // 로그인 성공시 loginPinia.login() 호출
         router.push({name:"freeboardlist"});
+    }else{
+        loginPinia.logout();
     }
 }
 </script>

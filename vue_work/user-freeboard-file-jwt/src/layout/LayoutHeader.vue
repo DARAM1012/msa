@@ -40,9 +40,11 @@
           </div>
         </div>
         <template v-if="loginPinia.loginCheck">
-          <div>{{ loginPinia.name }} 로그인하셨네요</div>
-          <div>
-            <button @click="logout">Logout</button>
+          <div class="flex space-x-5"> 
+            <h1>{{ loginPinia.name }} 님</h1>
+            <button @click="logout">
+              로그아웃
+            </button>
           </div>
         </template>
         <template v-else>
@@ -57,6 +59,7 @@
         </template>
       </nav>
     </div>
+    <!-- {{ loginPinia.loginCheck }} -->
   </header>
 </template>
 
@@ -67,27 +70,25 @@ import { watchEffect } from 'vue';
 import { RouterLink } from 'vue-router';
 
 const loginPinia = useLoginStore();
-
-console.log(loginPinia.loginCheck);
-
 const logout = () => {
-  localStorage.removeItem('token');
+  localStorage.removeItem("token");
   loginPinia.logout();
-};
+}
 
 watchEffect(async () => {
   const result = await doLoginCheck();
   if (result == false) {
     loginPinia.logout();
   } else {
-    if (result.status != 200) {
-      loginPinia.logout();
-      localStorage.removeItem('token');
-    } else {
+    if (result.status == 200) {
       loginPinia.login(result.data);
+    } else if (result.status == 401) {
+      localStorage.removeItem('token');
+      loginPinia.logout();
     }
   }
 });
 </script>
 
 <style lang="scss" scoped></style>
+

@@ -44,12 +44,18 @@
         <h1>email = {{ item.email }}</h1>
         <h1>가입날짜 = {{ item.wdate }}</h1>
         <h1>작성한글 = {{ item.list.length }}</h1>
-        <button 
-        class="mt-3 mr-3 px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300"
-        @click.stop="modalUser(item)">수정</button>
-        <button 
-        class="mt-3 px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300"
-        @click.stop="doDelete(item.idx)">삭제</button>
+        <button
+          class="mt-3 mr-3 px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300"
+          @click.stop="modalUser(item)"
+        >
+          수정
+        </button>
+        <button
+          class="mt-3 px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300"
+          @click.stop="doDelete(item.idx)"
+        >
+          삭제
+        </button>
       </div>
     </div>
   </div>
@@ -57,6 +63,7 @@
 <script setup>
 import { deleteUser, getUsers, saveUser } from '@/api/userApi.js';
 import { ref, watchEffect } from 'vue';
+import Swal from 'sweetalert2';
 
 const arr = ref([]);
 
@@ -74,15 +81,19 @@ const doDelete = async (idx) => {
 
 const modalUser = async (item) => {
   isModal.value = !isModal.value;
-  
+
   if (item == 'save') {
-   await saveUser({
+    await saveUser({
       idx: idx.value,
       name: name.value,
       email: email.value,
       password: '마이패스워드'
     });
-    alert('수정하였습니다.');
+    Swal.fire({
+      title: '알림',
+      text: '수정하였습니다.',
+      icon: 'success'
+    });
     const retValue = await getUsers();
     arr.value = retValue.data;
     return;
@@ -98,7 +109,6 @@ watchEffect(async () => {
   const retValue = await getUsers();
   arr.value = retValue.data;
 });
-
 </script>
 <style scoped>
 .h1-blue {

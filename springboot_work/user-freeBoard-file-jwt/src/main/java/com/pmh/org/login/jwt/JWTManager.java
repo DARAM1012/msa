@@ -1,5 +1,6 @@
 package com.pmh.org.login.jwt;
 
+import com.pmh.org.error.JWTAuthException;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
@@ -34,26 +35,6 @@ public class JWTManager {
         return jwt;
     }
 
-    // JWT 유효한지 검사 .... 우리가 설정한 비밀번호까지...
-    public String validJWT(String jwt){
-        String secrekey = environment.getProperty("spring.jwt.secret");
-        try {
-            SecretKey secretKey
-                    = new SecretKeySpec(secrekey.getBytes(),
-                    Jwts.SIG.HS256.key().build().getAlgorithm());
-            Jws<Claims> cliams = Jwts.parser()
-                    .verifyWith(secretKey)
-                    .build()
-                    .parseSignedClaims(jwt);
-            // 만약에 유효시간이 지났으면... JWT 사용 못하게 하기 위한 구문...
-            cliams.getPayload().getExpiration().before(new Date());
-        }catch (Exception e){
-            System.out.println(e.getMessage());
-            return "fail";
-        }
-        return "success";
-    }
-
     public Jws<Claims> getClaims(String jwt){
         String secrekey = environment.getProperty("spring.jwt.secret");
         try {
@@ -70,8 +51,7 @@ public class JWTManager {
 
             return cliams;
         }catch (Exception e){
-            e.printStackTrace();
-            return null;
+            throw new JWTAuthException("JWT TOKEN 문제 = "+e.getMessage());
         }
     }
 }

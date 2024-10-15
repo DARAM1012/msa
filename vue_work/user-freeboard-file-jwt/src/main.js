@@ -1,20 +1,19 @@
-import './assets/main.css'
+import './assets/main.css';
+import 'sweetalert2/dist/sweetalert2.min.css';
 
-// import {aa} from './AA';
-import { createApp } from 'vue'
-import App from './App.vue'
-// import TheHome from './views/TheHome.vue'
-import router from './router/index.js'
+import { createApp } from 'vue';
 import { createPinia } from 'pinia';
 
+import App from './App.vue';
+import router from './router/index.js';
 
-const pinia = createPinia();
+import VueSweetalert2 from 'vue-sweetalert2';
 
-// Pinia를 Vue 앱에 등록
+const app = createApp(App);
+const piniaStore = createPinia();
 
-const app = createApp(App)
+app.use(VueSweetalert2);
+app.use(router);
+app.use(piniaStore);
 
-app.use(router)
-app.use(pinia);
-
-app.mount('#QWER')
+app.mount('#QWER');

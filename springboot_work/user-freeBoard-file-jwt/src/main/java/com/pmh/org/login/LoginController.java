@@ -56,12 +56,10 @@ public class LoginController {
     public ResponseEntity<User> check(
             @RequestParam("jwt") String jwt,
             HttpServletResponse response) throws IOException {
+        System.out.println("jwt = "+jwt);
 
-        // jwt 가 유효한지... 유효하지 않으면 갑자기 Exception 발생...
         Jws<Claims> claimsJws = jwtManager.getClaims(jwt);
-        // jwt 가 유효하면 email 가져오기...
         String email = claimsJws.getPayload().get("email").toString();
-        // email로 DB 테이블 조회...
         User user = userRepository.findByEmail(email).orElseThrow(
                 () -> new UsernameNotFoundException(email)
         );
