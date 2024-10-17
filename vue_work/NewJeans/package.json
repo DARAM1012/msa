@@ -11,6 +11,9 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.6.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@fortawesome/vue-fontawesome": "^3.0.8",
     "dayjs": "^1.11.13",
     "pinia": "^2.2.4",
     "vue": "^3.5.12",
@@ -23,6 +26,7 @@
     "eslint": "^9.12.0",
     "eslint-plugin-vue": "^9.29.0",
     "prettier": "^3.3.3",
+    "sass-embedded": "^1.80.1",
     "vite": "^5.4.8"
   }
 }
