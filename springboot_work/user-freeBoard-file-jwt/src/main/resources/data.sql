@@ -1,5 +1,5 @@
 INSERT INTO users (idx, username, age, email, password, wdate, role)
-VALUES (1, 'Red', 25, 'red@example.com', '$2a$10$vWiSw.AYMvhJUR3sLaF98eag1LevUAp1VeuokrXcUcQs3QLqMjUxi', '2024-09-24 10:00:00','ROLE_ADMIN');
+VALUES (1, 'Red', 25, 'red@example.com', '$2a$10$vWiSw.AYMvhJUR3sLaF98eag1LevUAp1VeuokrXcUcQs3QLqMjUxi', now(),'ROLE_ADMIN');
 INSERT INTO users (idx, username, age, email, password, wdate , role)
 VALUES (2, 'Blue', 30, 'blue@example.com', '$2a$10$vWiSw.AYMvhJUR3sLaF98eag1LevUAp1VeuokrXcUcQs3QLqMjUxi', '2024-09-24 10:00:00','ROLE_ADMIN');
 INSERT INTO users (idx, username, age, email, password, wdate , role)

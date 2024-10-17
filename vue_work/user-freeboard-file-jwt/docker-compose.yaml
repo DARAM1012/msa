@@ -1,0 +1,62 @@
+version: '3.8'
+services:
+  # MariaDB 데이터베이스 서비스
+  mariadb:
+    image: mariadb:10.5
+    container_name: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: p@ssword   # root 사용자 비밀번호 설정
+      MYSQL_DATABASE: pmh                 # 기본 데이터베이스 설정
+      MYSQL_USER: pmh                     # 사용자 설정
+      MYSQL_PASSWORD: p@ssword        # 사용자 비밀번호 설정
+    ports:
+      - 3306:3306  # MariaDB의 포트를 호스트로 노출 (로컬 개발용)
+    networks:
+      - my_network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    # volumes:
+    #   - mariadb_data:/var/lib/mysql  # 데이터가 유지되도록 볼륨을 사용
+
+  # Spring Boot 애플리케이션 서비스 docker run -e
+  springboot:
+    image: parkmyounghoi/freeboard  # 실제 빌드된 Spring Boot 애플리케이션 이미지
+    container_name: springboot
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mariadb://mariadb:3306/pmh?serverTimezone=Asia/Seoul
+      SPRING_DATASOURCE_USERNAME: pmh                       # MariaDB 사용자
+      SPRING_DATASOURCE_PASSWORD: p@ssword              # MariaDB 사용자 비밀번호
+      SERVER_PORT: 8080
+      # SRPING_SQL_INIT_MODE: never
+    ports:
+      - 8080:8080  # Spring Boot 포트를 호스트로 노출
+    depends_on:
+      mariadb:  # MariaDB가 먼저 실행되도록 설정
+        condition: service_healthy
+    networks:
+      - my_network
+    
+
+  # Vue 서비스
+  freeboardvue:
+    image: parkmyounghoi/freeboardvue
+    container_name: freebaordvue
+    ports:
+      - 5173:5173
+    depends_on:
+      - springboot  # Spring Boot가 먼저 실행되도록 설정
+    networks:
+      - my_network
+    environment:
+    # - CHOKIDAR_USEPOLLING=true # vue 소스 바뀌면 자동으로 적용시켜라 docker copy 
+    # 웹브라우저 axios 통신할때 사용하는 port 입니다. 외부 IP 집에서도 호출 가능합니다..
+    - VITE_API_URL=http://112.222.157.156:3000  # 여기서 환경 변수를 설정합니다.
+
+
+# 네트워크 설정
+networks:
+  my_network:
+    driver: bridge

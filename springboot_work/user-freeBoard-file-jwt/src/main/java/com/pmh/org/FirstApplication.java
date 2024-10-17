@@ -16,8 +16,7 @@ public class FirstApplication {
 		ApplicationContext applicationContext
 				= SpringApplication.run(FirstApplication.class, args);
 
-//		Arrays.stream(applicationContext.getBeanDefinitionNames())
-//				.forEach(System.out::println);
+//		Arrays.stream(applicationContext.getBeanDefinitionNames()).forEach(System.out::println);
 
 	}
 

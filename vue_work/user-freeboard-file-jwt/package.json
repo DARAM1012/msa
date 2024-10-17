@@ -1,10 +1,10 @@
 {
-  "name": "ex06",
+  "name": "user-freeboard-file-jwt",
   "version": "0.0.0",
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host 0.0.0.0",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
@@ -32,6 +32,6 @@
     "prettier": "^3.2.5",
     "sass-embedded": "^1.79.3",
     "tailwindcss": "^3.4.11",
-    "vite": "^5.4.9"
+    "vite": "^5.3.1"
   }
 }

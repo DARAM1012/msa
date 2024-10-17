@@ -1,0 +1,12 @@
+#컨테이너 중지
+docker stop freeboardvue
+
+# 컨테이너 삭제해라
+docker rm -f freeboardvue
+# 이미지 삭제해라
+docker rmi parkmyounghoi/freeboardvue
+
+# 이미지 생성해라
+docker build -t parkmyounghoi/freeboardvue .
+# 컨테이너 생성해라
+docker run -d -p 5173:5173 --name freeboardvue parkmyounghoi/freeboardvue

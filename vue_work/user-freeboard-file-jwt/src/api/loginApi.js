@@ -36,6 +36,7 @@ export const doLoginCheck = async () => {
         return res;
     } catch (e) {
         console.log(e);
+        localStorage.removeItem('token');
         return e;
     }
 }
