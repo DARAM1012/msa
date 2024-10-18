@@ -1,15 +1,15 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 
+// nav 위치 설정
+import TheLayoutNav from './components/TheLayoutNav.vue';
 </script>
 
 <template>
-  <header class="flex space-x-10">
-   <RouterLink to="/">HOME</RouterLink>
-   <RouterLink to="/month">MONTH</RouterLink>
-   <RouterLink to="/about">ABOUT</RouterLink>
-  </header>
-  <RouterView />
+<!-- 사용한 곳 -->
+<TheLayoutNav></TheLayoutNav>
+
+  <RouterView  class="pt-16"/>
 </template>
 
 <style scoped></style>
