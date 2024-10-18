@@ -16,19 +16,16 @@ const router = createRouter({
       path: '/diary',
       name: 'diary',
       component: Diary,
-
     },
     {
       path: '/teams',
       name: 'teams',
       component: Teams,
-
     },
     {
       path: '/setting',
       name: 'setting',
       component: Setting,
-
     },
   ],
 })
