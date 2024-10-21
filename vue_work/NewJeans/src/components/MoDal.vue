@@ -1,0 +1,214 @@
+<template>
+  <teleport to="body">
+    <div class="modal-overlay" @click.self="closeModal" v-if="show">
+      <div class="modal-content">
+        <h2>Login</h2>
+        <form @submit.prevent="handleLogin">
+          <div class="form-group">
+            <input
+              type="text"
+              placeholder="Email"
+              v-model="username"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="password"
+              placeholder="Password"
+              v-model="password"
+              required
+            />
+          </div>
+          <button type="submit" class="login-button">로그인</button>
+          <!-- 비밀번호 찾기 버튼 추가 -->
+          <button @click="handleForgotPassword" class="forgot-password-button">
+            Forgot password?
+          </button>
+        </form>
+
+        <!-- 소셜 로그인 버튼 추가 -->
+        <div class="social-login-buttons">
+          <button class="social-button kakao-button">
+            <img
+              src="@/assets/kakao.png"
+              @click="kakaoLogin()"
+              alt="Kakao Icon"
+              class="social-icon"
+            />
+            카카오 계정으로 로그인
+          </button>
+          <button class="social-button google-button">
+            <img
+              src="@/assets/google.png"
+              alt="Google Icon"
+              class="social-icon"
+            />
+            구글 계정으로 로그인
+          </button>
+          <button class="social-button naver-button">
+            네이버 계정으로 로그인
+          </button>
+        </div>
+      </div>
+    </div>
+  </teleport>
+</template>
+
+<script setup>
+import { ref } from 'vue'
+
+// props를 정의할 때 타입과 함께 정의
+/* eslint-disable-next-line no-unused-vars */
+const props = defineProps({
+  show: {
+    type: Boolean,
+    required: true,
+  },
+})
+const emit = defineEmits(['close'])
+
+const username = ref('')
+const password = ref('')
+
+const handleLogin = () => {
+  // 로그인 로직 구현
+  console.log(`Logging in with: ${username.value}, ${password.value}`)
+  closeModal() // 로그인 후 모달 닫기
+}
+
+const closeModal = () => {
+  emit('close') // 부모 컴포넌트에 모달 닫기 이벤트 전달
+}
+
+// 비밀번호 찾기 핸들러 추가
+const handleForgotPassword = () => {
+  console.log('비밀번호 찾기 페이지로 이동')
+  // 비밀번호 찾기 로직 구현
+}
+//카카오 로그인
+const kakaoLogin = () => {
+  window.Kakao.Auth.authorize({
+    redirectUri: 'http://localhost:5173/oauth',
+  })
+}
+</script>
+
+<style scoped>
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  width: 300px; /* 너비 조정 */
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.form-group {
+  margin-bottom: 15px; /* 입력 필드 간의 여백 */
+}
+
+input {
+  width: 93%; /* 입력 필드 너비 100% */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-color: #007bff; /* 포커스 시 경계색 변경 */
+  outline: none; /* 기본 포커스 아웃라인 제거 */
+}
+
+.login-button {
+  background-color: #2c2c2c; /* 버튼 색상 */
+  color: white; /* 버튼 글자색 */
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  width: 100%; /* 버튼 너비 100% */
+}
+
+.login-button:hover {
+  background-color: #0056b3; /* 호버 시 색상 변경 */
+}
+
+.forgot-password-button {
+  background-color: transparent; /* 배경을 투명하게 */
+  color: #2c2c2c; /* 글자색 */
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 10px; /* 위쪽 여백 */
+  padding: 0;
+  text-decoration: underline;
+}
+
+.forgot-password-button:hover {
+  text-decoration: underline; /* 호버 시 밑줄 추가 */
+}
+
+/* 소셜 로그인 버튼 스타일 */
+.social-login-buttons {
+  margin-top: 20px; /* 소셜 로그인 버튼 위쪽 여백 */
+}
+
+.social-button {
+  color: #2c2c2c; /* 글자색 */
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%; /* 버튼 너비 100% */
+  margin-bottom: 10px; /* 버튼 간의 간격 */
+  display: flex;
+  align-items: center; /* 아이콘과 텍스트 수직 정렬 */
+  justify-content: center;
+}
+
+.kakao-button {
+  background-color: #fbe400; /* 버튼 배경색 */
+}
+
+.naver-button {
+  background-color: #3fc754; /* 버튼 배경색 */
+  color: white;
+}
+.google-button {
+  background-color: #ffffff; /* 버튼 배경색 */
+  border: 1px solid #b0b0b0;
+}
+
+.social-icon {
+  width: 20px; /* 아이콘 크기 조정 */
+  height: 20px; /* 아이콘 크기 조정 */
+  margin-right: 8px; /* 아이콘과 텍스트 사이 간격 */
+}
+
+.social-button:hover {
+  background-color: #eaeaea; /* 호버 시 색상 변경 */
+}
+</style>

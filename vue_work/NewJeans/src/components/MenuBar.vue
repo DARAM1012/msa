@@ -1,28 +1,3 @@
-<script setup>
-// ref를 import합니다.
-import { ref } from 'vue'
-import Profile from './ProfileSide.vue'
-// Font Awesome 아이콘 관련 import
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import {
-  faCalendarAlt,
-  faBook,
-  faUsers,
-  faCog,
-  faSignInAlt,
-} from '@fortawesome/free-solid-svg-icons'
-
-// 반응형 데이터 정의
-const isLoggedIn = ref(false) // 로그인 상태 관리 (초기값 false)
-const userName = ref('John Doe') // 사용자 이름
-const profileImage = ref('john-doe-profile.png') // 프로필 이미지
-
-// signIn 메서드 추가 (모달 구현할 때 사용할 수 있음)
-const signIn = () => {
-  // 로그인 로직을 여기에 구현하세요.
-}
-</script>
-
 <template>
   <header>
     <div class="wrapper">
@@ -34,40 +9,62 @@ const signIn = () => {
       <nav class="menu-grid">
         <RouterLink to="/" class="menu-item" active-class="active">
           <FontAwesomeIcon class="fa-icon" :icon="faCalendarAlt" />
-          <!-- Calendar 아이콘 -->
           Calendar
         </RouterLink>
         <RouterLink to="/diary" class="menu-item" active-class="active">
           <FontAwesomeIcon class="fa-icon" :icon="faBook" />
-          <!-- Diary 아이콘 -->
           Diary
         </RouterLink>
         <RouterLink to="/teams" class="menu-item" active-class="active">
           <FontAwesomeIcon class="fa-icon" :icon="faUsers" />
-          <!-- Teams 아이콘 -->
           Teams
         </RouterLink>
         <RouterLink to="/setting" class="menu-item" active-class="active">
           <FontAwesomeIcon class="fa-icon" :icon="faCog" />
-          <!-- Setting 아이콘 -->
           Setting
         </RouterLink>
-        <button class="menu-item sign-in" @click="signIn">
+        <button class="menu-item sign-in" @click="showModal = true">
           <FontAwesomeIcon class="fa-icon" :icon="faSignInAlt" />
-          <!-- Sign In 아이콘 -->
           Sign In
         </button>
       </nav>
+
+      <!-- Modal 컴포넌트 -->
+      <Modal :show="showModal" @close="showModal = false" />
     </div>
   </header>
 </template>
+
+<script setup>
+// ref를 import합니다.
+import { ref } from 'vue';
+import Profile from './ProfileSide.vue';
+import Modal from './Modal.vue'; // Modal 컴포넌트 import
+// Font Awesome 아이콘 관련 import
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import {
+  faCalendarAlt,
+  faBook,
+  faUsers,
+  faCog,
+  faSignInAlt,
+} from '@fortawesome/free-solid-svg-icons';
+
+// 반응형 데이터 정의
+const isLoggedIn = ref(false); // 로그인 상태 관리 (초기값 false)
+const userName = ref('John Doe'); // 사용자 이름
+const profileImage = ref('john-doe-profile.png'); // 프로필 이미지
+
+// 모달 표시 상태 관리
+const showModal = ref(false);
+</script>
 
 <style scoped>
 .wrapper {
   display: flex;
   flex-direction: column; /* 세로 방향으로 정렬 */
   align-items: flex-start; /* 왼쪽 정렬 */
-  padding: 50px; /* 여백 추가 */
+  padding: 50px 0 0 150px; /* 여백 추가 */
 }
 
 .menu-grid {
@@ -75,7 +72,7 @@ const signIn = () => {
   grid-template-columns: repeat(2, 1fr); /* 2개의 열 */
   grid-template-rows: repeat(3, 75px); /* 3개의 행 */
   gap: 0; /* 상자 사이의 간격을 없앰 */
-  width: 10%; /* 가로 너비 설정 */
+  width: 13%; /* 가로 너비 설정 */
   margin-top: 20px; /* 프로필과 메뉴 간의 간격 */
 }
 

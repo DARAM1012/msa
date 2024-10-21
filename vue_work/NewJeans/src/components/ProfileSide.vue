@@ -38,7 +38,7 @@ const { isLoggedIn, userName, profileImage } = defineProps({
 
 <style scoped>
 .profile {
-  margin-left: 5px;
+  margin-left: 32px;
   display: flex;
   flex-direction: column; /* 세로 방향으로 정렬 */
   align-items: flex-start; /* 왼쪽 정렬 */
