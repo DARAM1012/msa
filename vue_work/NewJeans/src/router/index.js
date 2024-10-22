@@ -3,6 +3,7 @@ import Calendar from '../views/CalendarView.vue'
 import Diary from '../views/DiaryView.vue'
 import Teams from '../views/TeamsView.vue'
 import Setting from '../views/SettingView.vue'
+import SignUpp from '../views/SignUpp.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,6 +27,11 @@ const router = createRouter({
       path: '/setting',
       name: 'setting',
       component: Setting,
+    },
+    {
+      path: '/signUpp',
+      name: 'signUpp',
+      component: SignUpp,
     },
   ],
 })

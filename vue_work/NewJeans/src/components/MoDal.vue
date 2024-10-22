@@ -5,94 +5,108 @@
         <h2>Login</h2>
         <form @submit.prevent="handleLogin">
           <div class="form-group">
-            <input
-              type="text"
-              placeholder="Email"
-              v-model="username"
-              required
-            />
+            <input type="text" placeholder="Email" v-model="username" required />
           </div>
           <div class="form-group">
-            <input
-              type="password"
-              placeholder="Password"
-              v-model="password"
-              required
-            />
+            <input type="password" placeholder="Password" v-model="password" required />
           </div>
           <button type="submit" class="login-button">로그인</button>
           <!-- 비밀번호 찾기 버튼 추가 -->
-          <button @click="handleForgotPassword" class="forgot-password-button">
-            Forgot password?
-          </button>
+          <button @click="handleForgotPassword" class="forgot-password-button">Forgot password?</button>
         </form>
 
         <!-- 소셜 로그인 버튼 추가 -->
         <div class="social-login-buttons">
-          <button class="social-button kakao-button">
-            <img
-              src="@/assets/kakao.png"
-              @click="kakaoLogin()"
-              alt="Kakao Icon"
-              class="social-icon"
-            />
-            카카오 계정으로 로그인
+          <button a id="custom-login-btn" @click="kakaoLogin()" class="social-button kakao-button">
+            <img src="@/assets/kakao.png" alt="Kakao Icon" class="social-icon" /> 카카오 계정으로 로그인
           </button>
           <button class="social-button google-button">
-            <img
-              src="@/assets/google.png"
-              alt="Google Icon"
-              class="social-icon"
-            />
-            구글 계정으로 로그인
+            <img src="@/assets/google.png" alt="Google Icon" class="social-icon" /> 구글 계정으로 로그인
           </button>
           <button class="social-button naver-button">
             네이버 계정으로 로그인
           </button>
         </div>
+
+        <!-- 회원가입 버튼 추가 -->
+        <button @click="openSignUp" class="signup-button">회원가입</button>
       </div>
     </div>
   </teleport>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref } from 'vue';
+import { useRouter } from 'vue-router'; 
 
-// props를 정의할 때 타입과 함께 정의
+import { watchEffect } from "vue";
+import { useRoute } from "vue-router";
+import axios from "axios";
+
+// useRouter 훅 import
+
+const router = useRouter(); // useRouter 훅 사용
+
+// props 정의
 /* eslint-disable-next-line no-unused-vars */
 const props = defineProps({
   show: {
     type: Boolean,
     required: true,
   },
-})
-const emit = defineEmits(['close'])
+});
+const emit = defineEmits(['close']);
 
-const username = ref('')
-const password = ref('')
+// 로그인 관련 상태
+const username = ref('');
+const password = ref('');
 
+// 회원가입 페이지 새 창으로 열기
+const openSignUp = () => {
+  const signUpUrl = router.resolve({ path: '/signupp' }).href; // this.$router 대신 router 사용
+  window.open(signUpUrl, '_blank'); // 새 창에서 회원가입 페이지 열기
+};
+
+// 로그인 처리 함수
 const handleLogin = () => {
-  // 로그인 로직 구현
-  console.log(`Logging in with: ${username.value}, ${password.value}`)
-  closeModal() // 로그인 후 모달 닫기
-}
+  console.log(`Logging in with: ${username.value}, ${password.value}`);
+  closeModal(); // 로그인 후 모달 닫기
+};
 
+// 모달 닫기 함수
 const closeModal = () => {
-  emit('close') // 부모 컴포넌트에 모달 닫기 이벤트 전달
-}
+  emit('close'); // 부모 컴포넌트에 모달 닫기 이벤트 전달
+};
 
-// 비밀번호 찾기 핸들러 추가
+// 비밀번호 찾기 핸들러
 const handleForgotPassword = () => {
-  console.log('비밀번호 찾기 페이지로 이동')
-  // 비밀번호 찾기 로직 구현
-}
+  console.log('비밀번호 찾기 페이지로 이동');
+};
+
+
 //카카오 로그인
+
+const route = useRoute();
+
 const kakaoLogin = () => {
   window.Kakao.Auth.authorize({
-    redirectUri: 'http://localhost:5173/oauth',
+    redirectUri: "http://localhost:5173/kakaologin",
+  });
+};
+
+watchEffect(() => {
+  if (route.query.code) {
+    axios.get("http://localhost:10000/kakao/login?code=" + route.query.code)
+  .then((response) => {
+    console.log(response.data);
   })
-}
+  .catch((error) => {
+    console.log(error);
+  });
+  }
+});
 </script>
+
 
 <style scoped>
 .modal-overlay {
@@ -114,6 +128,7 @@ const kakaoLogin = () => {
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   width: 300px; /* 너비 조정 */
+  height: 500px;
   text-align: center;
 }
 
@@ -152,7 +167,7 @@ input:focus {
 }
 
 .login-button:hover {
-  background-color: #0056b3; /* 호버 시 색상 변경 */
+  background-color: #eaeaea; /* 호버 시 색상 변경 */
 }
 
 .forgot-password-button {
@@ -197,6 +212,7 @@ input:focus {
   background-color: #3fc754; /* 버튼 배경색 */
   color: white;
 }
+
 .google-button {
   background-color: #ffffff; /* 버튼 배경색 */
   border: 1px solid #b0b0b0;
@@ -210,5 +226,23 @@ input:focus {
 
 .social-button:hover {
   background-color: #eaeaea; /* 호버 시 색상 변경 */
+}
+
+/* 회원가입 버튼 스타일 */
+.signup-button {
+  background-color: #ffffff;
+  color: 2c2c2c;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #b0b0b0;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  width: 100%; /* 버튼 너비 100% */
+  margin-top: 10px; /* 버튼과 위 요소 간의 여백 */
+}
+
+.signup-button:hover {
+  background-color: #eaeaea;
 }
 </style>

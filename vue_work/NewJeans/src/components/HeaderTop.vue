@@ -8,7 +8,10 @@
       </button>
     </div>
     <div class="logo">
-      <img src="@/assets/logo.png" alt="Logo" />
+      <!-- RouterLink를 사용하여 홈 경로로 이동 -->
+      <RouterLink to="/">
+        <img src="@/assets/logo.png" alt="Logo" />
+      </RouterLink>
     </div>
   </header>
 </template>
@@ -22,17 +25,17 @@
   display: flex;
   justify-content: center; /* 요소를 수평 중앙에 배치 */
   align-items: center;
-  padding: 20px;
-  position: relative; /* 로고 위치를 설정하기 위해 relative로 변경 */
+  padding: 2rem; /* rem 단위로 패딩 설정 */
+  position: relative;
 }
 
 .logo {
   position: absolute;
-  right: 210px; /* 로고를 오른쪽 끝에 배치 */
+  right: 17vw; /* 화면 너비의 10% 오른쪽에 배치 */
 }
 
 .logo img {
-  height: 40px; /* 로고 크기 설정 */
+  height: 5vh; /* 로고 크기를 vh 단위로 설정하여 화면 크기에 맞춤 */
 }
 
 .search-container {
@@ -40,29 +43,62 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 450px;
+  max-width: 30vw; /* 화면 너비의 40%로 설정 */
   position: relative;
-  left: 135px;
+  left: 9.5vw; /* 화면 왼쪽으로 5vw 만큼 이동 */
 }
 
 .search-input {
-  width: 50%;
-  padding: 10px;
+  width: 40%; /* 검색창의 너비를 60%로 설정 */
   border: 1px solid #ccc;
-  border-radius: 20px;
-  font-size: 16px;
+  border-radius: 1.5rem; /* 둥근 모서리 크기를 rem 단위로 설정 */
+  font-size: 1rem; /* 폰트 크기 설정 */
+  padding: 0.5rem 1rem; /* 패딩을 줄여 검색창 높이를 줄임 */
+  height: 1.5rem; /* 검색창의 높이를 줄임 */
 }
 
 .search-btn {
   background: none;
   border: none;
-  margin-left: -35px;
+  margin-left: -3rem; /* 버튼이 입력창 내부로 겹치도록 마진을 음수로 설정 */
   cursor: pointer;
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .search-btn i {
-  font-size: 20px; /* 아이콘 크기 */
-  color: #555; /* 아이콘 색상 */
+  font-size: 1.2rem; /* 아이콘 크기 */
+  color: #555;
+}
+
+/* 반응형 디자인을 위한 미디어 쿼리 */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column; /* 작은 화면에서는 세로로 정렬 */
+    padding: 1.5rem;
+  }
+
+  .logo {
+    position: static; /* 작은 화면에서는 절대 위치를 제거하고 일반 정렬로 변경 */
+    margin-bottom: 1rem;
+  }
+
+  .logo img {
+    height: 4vh; /* 작은 화면에서 로고 크기를 줄임 */
+  }
+
+  .search-container {
+    left: 0;
+    max-width: 90vw; /* 검색창의 너비를 화면의 90%로 설정 */
+  }
+
+  .search-input {
+    width: 80%; /* 검색창 너비를 조금 더 크게 설정 */
+    font-size: 0.9rem; /* 작은 화면에서는 폰트 크기를 줄임 */
+  }
+
+  .search-btn {
+    font-size: 1rem; /* 버튼 크기를 조금 줄임 */
+    margin-left: -2rem;
+  }
 }
 </style>

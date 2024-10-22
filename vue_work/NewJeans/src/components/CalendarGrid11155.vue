@@ -1,18 +1,20 @@
 <script setup>
 import { ref, watch } from 'vue'
 import dayjs from 'dayjs'
-import ScheduleForm from './ScheduleForm.vue'
-import DiaryForm from './DiaryForm.vue'
+import ScheduleForm from './ScheduleForm.vue' 
+import DiaryForm from './DiaryForm.vue' 
 
 const now = ref(dayjs())
 const columns = ref([])
 const groupColumns = ref([])
 
+// selectDate 가 값이 null일때는 false 값이 date 로 바뀌면 true;
 const selectDate = ref(null)
-const isFlipped = ref(false)
+const isFlipped = ref(false) // 달력이 뒤집혔는지 여부를 관리하는 상태
 
-const isScheduleFormVisible = ref(false)
-const isDiaryFormVisible = ref(false)
+const isScheduleFormVisible = ref(false) // ScheduleForm의 가시성 관리
+const isDiaryFormVisible = ref(false) // DiaryForm의 가시성 관리
+
 
 const subMonth = () => {
   now.value = dayjs(now.value).subtract(1, 'month')
@@ -21,13 +23,15 @@ const addMonth = () => {
   now.value = dayjs(now.value).add(1, 'month')
 }
 const selectDateFn = date => {
+  console.log('dateClick', dayjs(date).format('YYYY-MM-DD'))
   selectDate.value = dayjs(date).format('YYYY-MM-DD')
-  isFlipped.value = true
+  isFlipped.value = true // 날짜를 클릭하면 달력이 플립
 }
 const goToday = () => {
-  now.value = dayjs()
+  now.value = dayjs() // 오늘 날짜로 돌아가기
 }
 
+// 스케줄, 다이어리 소환
 const showScheduleForm = () => {
   isScheduleFormVisible.value = true
   isDiaryFormVisible.value = false
@@ -40,20 +44,23 @@ const showDiaryForm = () => {
 
 watch(
   now,
-  () => {
-    columns.value = []
-    groupColumns.value = []
+  (newValue, _) => {
+    columns.value = [] // 원래 있던 값 제거
+    groupColumns.value = [] // 원래 있던 값 제거
     const startday = dayjs(now.value).startOf('month')
     const lastday = dayjs(now.value).endOf('month')
     const startdayOfWeek = startday.get('day')
     const lastdayOfWeek = lastday.get('day')
 
+    // 저번달에 날짜 추가
     for (let i = 1; i <= startdayOfWeek; i++) {
       columns.value.unshift(dayjs(startday).subtract(i, 'day'))
     }
+    // 현재 달력에 날짜 추가
     for (let i = 0; i < lastday.get('date'); i++) {
       columns.value.push(dayjs(startday).add(i, 'day'))
     }
+    // 다음달에 날짜 추가
     for (let i = 1; i <= 6 - lastdayOfWeek; i++) {
       columns.value.push(dayjs(lastday).add(i, 'day'))
     }
@@ -67,6 +74,9 @@ watch(
     deep: true,
   },
 )
+
+
+
 </script>
 
 <template>
@@ -115,55 +125,125 @@ watch(
         </div>
       </div>
 
-      <!-- 뒤집힌 화면에서 일정 및 다이어리 버튼, 폼 렌더링 -->
+      <!-- 뒤집힌 화면에서 일정 및 다이어리 버튼 -->
       <div class="flipped-content">
-        <div
-          class="button-group"
-        >
+        <div v-if="!isScheduleFormVisible && !isDiaryFormVisible" class="button-group">
           <button class="schedule-btn" @click="showScheduleForm">
             Schedule
           </button>
-          <button class="diary-btn" @click="showDiaryForm">Diary</button>
-        </div>
-
-        <!-- ScheduleForm 컴포넌트 렌더링 -->
-        <div v-if="isScheduleFormVisible" class="form-container">
-          <ScheduleForm />
-        </div>
-
-        <!-- DiaryForm 컴포넌트 렌더링 -->
-        <div v-if="isDiaryFormVisible" class="form-container">
-          <DiaryForm />
+          <button class="diary-btn" @click="showDiaryForm">
+            Diary
+          </button>
         </div>
       </div>
     </div>
+
+    <!-- ScheduleForm 컴포넌트 렌더링 -->
+    <ScheduleForm v-if="isScheduleFormVisible" />
+
+    <!-- DiaryForm 컴포넌트 렌더링 -->
+    <DiaryForm v-if="isDiaryFormVisible" />
   </div>
 </template>
 
-
-<style scoped>
+<style lang="scss" scoped>
 /* 달력의 전체적인 구조 */
 .calendar-wrapper {
   background-color: white;
   border-radius: 10px;
   perspective: 1000px;
   display: flex;
-  align-items: flex-start;
-  height: auto;
-  padding-bottom: 20px;
-  padding-left: 50px;
-  padding-right: 50px;
-  min-height: 500px;
-  width: 60%;
+  align-items: flex-start; /* 상단 정렬로 변경 */
+  height: auto; /* vh 설정 대신 auto로 */
+  padding-bottom: 20px; /* 하단에도 패딩 추가 */
+  padding-left: 100px;
+  min-height: 500px; /* 최소 높이 설정 */
+  width: 60%; /* 전체 너비 사용 */
   height: 750px;
   padding-top: 30px;
-  margin-left: 50px;
-  margin-right: 50px;
-  overflow: hidden;
+  margin-left: 100px;
+  overflow: hidden; /* 스크롤 방지 */
 }
 
-/* 달력 제목과 관련된 스타일들  */
+/* 달력과 플립 애니메이션 적용 */
+.calendar-container {
+  width: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  position: relative;
+  height: 100%;
+  min-height: 400px; /* 최소 높이 설정 */
+  padding: 10px;
+}
 
+.flipped {
+  transform: rotateY(180deg); /* 180도 회전 */
+}
+
+/* 달력 앞면과 뒷면 */
+.vv,
+.flipped-content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -50px;
+  backface-visibility: hidden; /* 뒷면이 보이지 않도록 */
+  min-height: 750px; /* 최소 높이 설정 */
+}
+
+.flipped-content {
+  transform: rotateY(180deg); /* 뒤집힌 상태에서도 뒷면이 보이도록 */
+  justify-content: center;
+  width: 1000px;
+}
+
+/* 달력 스타일 */
+.calendar {
+  backface-visibility: hidden; /* 플립 시 뒷면이 보이지 않도록 */
+}
+
+.flipped-content {
+  backface-visibility: hidden;
+  transform: rotateY(180deg); /* 뒤집힌 상태에서도 올바르게 보이도록 */
+}
+
+.flipped-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+}
+
+/* 버튼 그룹 스타일 */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 2rem;
+}
+
+.schedule-btn,
+.diary-btn {
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  font-size: 1.2rem;
+  transition: background-color 0.3s;
+}
+
+.schedule-btn:hover,
+.diary-btn:hover {
+  background-color: #555;
+}
+
+
+/* 달력 상단 월 이동 버튼 및 월 스타일 */
 .Calender-title {
   display: flex;
   justify-content: center; /* 가운데 정렬 */
@@ -186,6 +266,17 @@ watch(
   position: absolute; /* 절대 위치 설정 */
   left: 10px; /* 왼쪽 정렬 */
 }
+
+.B-Month-button,
+.A-Month-button {
+  background-color: white;
+  border: none;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  font-size: 1.25rem;
+}
+
 .YMYM {
   display: flex;
   flex-direction: column;
@@ -204,48 +295,6 @@ watch(
 
 .month {
   font-size: 1.2rem;
-}
-.B-Month-button,
-.A-Month-button {
-  background-color: white;
-  border: none;
-  width: 2rem;
-  height: 2rem;
-  cursor: pointer;
-  font-size: 1.25rem;
-}
-
-/* 플립 애니메이션 */
-.calendar-container {
-  width: 100%;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-  position: relative;
-  height: 100%;
-  min-height: 400px;
-  padding: 10px;
-}
-
-.flipped {
-  transform: rotateY(180deg);
-}
-
-/* 달력 앞면과 뒷면 */
-.vv,
-.flipped-content {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  backface-visibility: hidden;
-  min-height: 750px;
-}
-
-/* 달력 앞면 */
-.vv {
-  display: block;
-  backface-visibility: hidden;
 }
 
 /* 달력 그리드와 날짜 셀 스타일 */
@@ -318,61 +367,5 @@ watch(
 
 .today {
   border: 2px solid black;
-}
-
-/* flipped-content 스타일 */
-.flipped-content {
-  transform: rotateY(180deg);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 20px;
-  height: 100%;
-  position: relative;
-}
-
-/* 버튼 그룹 스타일 */
-.button-group {
-  display: flex;
-  justify-content: center; /* 중앙 정렬 */
-  align-items: center;
-  gap: 20px;
-  margin-top: 0;
-  position: absolute;
-  top: 20px; /* 상단에 위치 */
-}
-
-/* 버튼 스타일 수정 */
-.schedule-btn,
-.diary-btn {
-  background-color: #333;
-  color: white;
-  padding: 0; /* 패딩을 제거해 크기에 영향 미치지 않도록 설정 */
-  display: flex; /* 버튼 내부의 텍스트를 중앙에 정렬하기 위한 flexbox */
-  justify-content: center; /* 수평 중앙 정렬 */
-  align-items: center; /* 수직 중앙 정렬 */
-  border-radius: 10px;
-  cursor: pointer;
-  border: none;
-  font-size: 1.2rem;
-  transition: background-color 0.3s;
-  height: 60px;
-  width: 120px;
-}
-
-.schedule-btn:hover,
-.diary-btn:hover {
-  background-color: #555;
-}
-
-/* 폼을 담는 컨테이너 스타일 */
-.form-container {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  width: 80%;
-  max-width: 600px;
 }
 </style>

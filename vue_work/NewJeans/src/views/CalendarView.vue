@@ -1,5 +1,5 @@
 <script setup>
-import CalendarGrid from '@/components/CalendarGrid.vue';
+import CalendarGrid from '@/components/CalendarGrid.vue'
 </script>
 
 <template>

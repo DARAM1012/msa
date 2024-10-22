@@ -1,27 +1,35 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+import { computed } from 'vue'
+import { useRoute } from 'vue-router' // 현재 경로 확인을 위해 추가
 import MenuBar from './components/MenuBar.vue'
 import HeaderTop from './components/HeaderTop.vue'
-import CalendarView from './views/CalendarView.vue';
+import CalendarView from './views/CalendarView.vue'
+
+const route = useRoute()
+
+// 회원가입 페이지인지 여부 확인 ("/signupp" 경로)
+const isSignUpPage = computed(() => route.path === '/signupp')
 </script>
 
 <template>
-  <HeaderTop />
-  <MenuBar class="Menubar" />
-  <CalendarView />
-
-  <RouterView />
+  <!-- 회원가입 페이지가 아닐 때만 HeaderTop과 MenuBar를 보여줌 -->
+  <HeaderTop v-if="!isSignUpPage" />
+  <div class="app-layout">
+    <MenuBar v-if="!isSignUpPage" />
+    <div class="content-area">
+      <RouterView />
+    </div>
+  </div>
 </template>
 
 <style scoped>
-.Menubar{
-  position: relative; 
+.app-layout {
+  display: flex; /* MenuBar와 콘텐츠 영역을 가로로 배치 */
 }
 
-.CalendarGrid{
-  position: absolute;
-  top: 20%; 
-  left: 40%;
-  ;
+.content-area {
+  padding: 0; /* 콘텐츠와 화면 사이에 여백 추가 */
+  width: 100%;
 }
 </style>
