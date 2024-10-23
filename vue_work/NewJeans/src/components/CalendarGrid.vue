@@ -117,9 +117,7 @@ watch(
 
       <!-- 뒤집힌 화면에서 일정 및 다이어리 버튼, 폼 렌더링 -->
       <div class="flipped-content">
-        <div
-          class="button-group"
-        >
+        <div class="button-group">
           <button class="schedule-btn" @click="showScheduleForm">
             Schedule
           </button>
@@ -139,7 +137,6 @@ watch(
     </div>
   </div>
 </template>
-
 
 <style scoped>
 /* 달력의 전체적인 구조 */

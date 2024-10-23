@@ -63,7 +63,7 @@ const showModal = ref(false) // 기본값 false로 시작
   display: flex;
   flex-direction: column; /* 세로 방향으로 정렬 */
   align-items: flex-start; /* 왼쪽 정렬 */
-  padding: 5vh 0 0 20vw; /* vh와 vw 단위로 패딩 설정 */
+  padding: 5vh 0 0 17vw; /* vh와 vw 단위로 패딩 설정 */
 }
 
 .menu-grid {
@@ -115,16 +115,6 @@ const showModal = ref(false) // 기본값 false로 시작
 /* Diary 메뉴 */
 .menu-item:nth-child(2) {
   border-top-right-radius: 1rem; /* 우측 상단 모서리 둥글게 */
-}
-
-/* Teams 메뉴 */
-.menu-item:nth-child(3) {
-  border-radius: 0; /* 기본적으로 둥근 모서리 없음 */
-}
-
-/* Setting 메뉴 */
-.menu-item:nth-child(4) {
-  border-radius: 0; /* 기본적으로 둥근 모서리 없음 */
 }
 
 /* Sign In 버튼 */

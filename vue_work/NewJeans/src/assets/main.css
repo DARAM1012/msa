@@ -3,3 +3,44 @@ body {
   margin: 0;
   padding: 0; /* 기본 마진 제거 */
 }
+
+:root {
+  --background-color: white;
+  --text-color: black;
+  --button-background: transparent;
+  --button-text-color: #838383;
+  --border-color: #ccc;
+}
+
+.dark-theme {
+  --background-color: #2d2d2d;
+  --text-color: white;
+  --button-background: #444;
+  --button-text-color: white;
+  --border-color: #555;
+}
+
+/* 핑크 테마 설정 */
+.pink-theme {
+  --background-color: #ffe4e9; /* 전체 배경 색상 */
+  --text-color: #4a4a4a; /* 텍스트 색상 */
+  --button-background: #ffadc1; /* 버튼 배경 색상 */
+  --button-text-color: white; /* 버튼 텍스트 색상 */
+  --border-color: #ffb6c1; /* 테두리 색상 */
+  --background-repeat: no-repeat; /* 배경 이미지 */
+  --background-size: contain; /* 이미지 크기 */
+  --background-position: 300px bottom; /* 이미지 위치 */
+  --background-image: url('princess2.png');
+}
+
+.sky-theme {
+  --background-color: #e0f7fa; /* 연한 하늘색 배경 */
+  --text-color: #007bb2; /* 어두운 파란색 텍스트 */
+  --button-background: #4dd0e1; /* 버튼 하늘색 배경 */
+  --button-text-color: white; /* 버튼 텍스트 색상 */
+  --border-color: #00acc1; /* 테두리 하늘색 */
+  --background-image: url('adventure.jpg');
+  --background-repeat: no-repeat; /* 배경 이미지 */
+  --background-size: cover; /* 이미지 크기 */
+  --background-position: center; /* 이미지 위치 */
+}

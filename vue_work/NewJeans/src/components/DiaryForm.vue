@@ -1,43 +1,186 @@
 <template>
-    <div class="diary-form">
-      <h2>다이어리 작성</h2>
-      <form @submit.prevent="submitDiary">
-        <!-- 다이어리 작성 폼 예시 -->
-        <div>
-          <label for="title">제목</label>
-          <input id="title" v-model="title" />
+  <div class="diary-form">
+    <form @submit.prevent="submitDiary">
+      <!-- Title과 Category -->
+      <div class="row">
+        <div class="title-section">
+          <label for="title">Title</label>
+          <input id="title" v-model="title" class="input-field" />
         </div>
-        <div>
-          <label for="date">날짜</label>
-          <input id="date" v-model="date" type="date" />
+        <div class="category-section">
+          <label for="category">Category</label>
+          <select v-model="selectedCategory" id="category" class="input-field">
+            <option
+              v-for="category in categories"
+              :key="category"
+              :value="category"
+            >
+              {{ category }}
+            </option>
+          </select>
         </div>
-        <div>
-          <label for="content">내용</label>
-          <textarea id="content" v-model="content"></textarea>
+      </div>
+
+      <!-- Date -->
+      <div class="row">
+        <div class="icon-label">
+          <i class="icon-calendar"></i>
+          <label for="date">Add Date</label>
         </div>
-        <button type="submit">저장</button>
-      </form>
-    </div>
-  </template>
-  
-  <script setup>
-  import { ref } from 'vue'
-  
-  const title = ref('')
-  const date = ref('')
-  const content = ref('')
-  
-  const submitDiary = () => {
-    console.log('Diary Submitted', { title: title.value, date: date.value, content: content.value })
+        <input id="date" v-model="date" type="date" class="input-field" />
+      </div>
+
+      <!-- Note -->
+      <div class="row">
+        <div class="icon-label">
+          <i class="icon-note"></i>
+          <label for="content">Add Note</label>
+        </div>
+        <textarea
+          id="content"
+          v-model="content"
+          placeholder="Enter your note"
+          class="input-field textarea-field"
+        ></textarea>
+      </div>
+
+      <!-- Save and Cancel Buttons -->
+      <div class="button-row">
+        <button type="submit" class="save-button">
+          <i class="check-icon"></i>
+        </button>
+        <button type="button" @click="cancelForm" class="cancel-button">
+          <i class="cancel-icon"></i>
+        </button>
+      </div>
+    </form>
+  </div>
+</template>
+
+<script setup>
+import { ref } from 'vue'
+import axios from 'axios'
+
+const props = defineProps({
+  selectedDate: String,
+})
+
+const title = ref('')
+const date = ref(props.selectedDate || '')
+const content = ref('')
+const selectedCategory = ref('Daily') // 선택된 카테고리
+const categories = ['Daily', 'GROWTH', 'EXERCISE', 'TRIP', 'ETC'] // 카테고리 리스트
+
+const submitDiary = async () => {
+  const diaryData = {
+    title: title.value,
+    date: date.value,
+    content: content.value,
+    category: selectedCategory.value,
+    calendarsIdx: 1,
   }
-  </script>
-  
-  <style scoped>
-  /* 스타일링 */
-  .diary-form {
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
+
+  try {
+    const response = await axios.post(
+      'http://localhost:8080/diary/create',
+      diaryData,
+      {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      },
+    )
+    console.log('Diary Submitted Successfully', response.data)
+  } catch (error) {
+    console.error('Failed to submit diary:', error)
   }
-  </style>
-  
+}
+
+// 취소 버튼 클릭 시 폼 초기화
+const cancelForm = () => {
+  title.value = ''
+  date.value = props.selectedDate || ''
+  selectedCategory.value = 'Daily'
+  content.value = ''
+}
+</script>
+
+<style scoped>
+.diary-form {
+  border: 1px solid #ccc;
+  margin-top: 10vh;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* 전체 레이아웃 */
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.title-section {
+  flex: 2;
+}
+
+.category-section {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.icon-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.icon-calendar::before {
+  content: '\1F4C5'; /* Calendar icon */
+}
+
+.icon-note::before {
+  content: '\270E'; /* Pencil icon */
+}
+
+/* 입력 필드 스타일 */
+.input-field {
+  border: none;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.textarea-field {
+  height: 100px;
+  resize: none;
+}
+
+.button-row {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.save-button,
+.cancel-button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: 1.2rem;
+}
+
+.save-button:hover,
+.cancel-button:hover {
+  background-color: #555;
+}
+</style>

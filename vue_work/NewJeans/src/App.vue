@@ -4,7 +4,6 @@ import { computed } from 'vue'
 import { useRoute } from 'vue-router' // 현재 경로 확인을 위해 추가
 import MenuBar from './components/MenuBar.vue'
 import HeaderTop from './components/HeaderTop.vue'
-import CalendarView from './views/CalendarView.vue'
 
 const route = useRoute()
 

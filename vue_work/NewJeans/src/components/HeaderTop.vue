@@ -45,7 +45,7 @@
   width: 100%;
   max-width: 30vw; /* 화면 너비의 40%로 설정 */
   position: relative;
-  left: 9.5vw; /* 화면 왼쪽으로 5vw 만큼 이동 */
+  left: 7vw; /* 화면 왼쪽으로 5vw 만큼 이동 */
 }
 
 .search-input {
