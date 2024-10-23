@@ -1,6 +1,5 @@
 server:
   port: 20000
-
 spring:
   application:
     name: todo-kakao
@@ -8,23 +7,23 @@ spring:
   sql:
     init:
       mode: always
-      ## vscode ?? ???
+    ## vscode ?? ???...
   output:
     ansi:
       enabled: always
-## DB ??
+    ## DB ??
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
     url: jdbc:mariadb://localhost:3306/pmh?serverTimezone=Asia/Seoul
     username: root
     password: 1234
-## jpa create
+    ## jpa create
   jpa:
     hibernate:
       ddl-auto: create
       ## sql ???
     properties:
-      hibernate.format_sql: true
+      hibernate.format_sql: false
     show-sql: true
     open-in-view: false
     defer-datasource-initialization: true
@@ -35,11 +34,12 @@ spring:
       max-request-size: 100MB
       file-size-threshold: 0
       enabled: true
-## jwt ?? ??? ???? ????
+## jwt ?? ??? ???? ????..
+msa:
   jwt:
     secret: abcdefghijklmnopqrstuvwxyz01234567890
 
-
-
-
-
+oauth:
+  kakao:
+    client_id: 477ea0788a39a67ac40fa6b1bc49e7d8
+    client_secret: rhFfJfqQ4bHm22u3aLuIgDAOSLRn5XjI
