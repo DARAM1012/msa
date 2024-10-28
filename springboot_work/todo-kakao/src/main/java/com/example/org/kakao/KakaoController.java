@@ -1,37 +1,57 @@
 package com.example.org.kakao;
 
-
-import io.swagger.v3.oas.models.PathItem;
+import com.pmh.org.kakao.KakaoService;
+import com.pmh.org.kakao.dto.KakaoMessageDto;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("kakao")
 @Slf4j
+@CrossOrigin
+@RequiredArgsConstructor
 public class KakaoController {
 
+    private final KakaoService kakaoService;
+
     @GetMapping("login")
-    public String kakaoCode(@RequestParam(name="code") String code){
-        log.info("code {}",code);
+    public ResponseEntity<String> kakaoCode(@RequestParam(value = "code") String code) {
+        // 1. restTemplate
+        String jwt = kakaoService.getToken(code);
+        if(jwt.equals("fail"))
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("fail to get jwt");
+        else
+            return ResponseEntity.ok(jwt);
+//        kakaoService.messageSend();
+        // 2. openfeign
 
-        // 1.restTemplate
-        try {
-            String url = "https://kauth.kakao.com/oauth/token";
+        // 새로운 메인 길....
 
-            RestTemplate RestTemplate = new RestTemplate();
-
-            HttpEntity<String> resquestEntity = new HttpEntity<>("");
-
-            restTemplate.exchange(url, PathItem.HttpMethod.POST,null);
-        }catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return "kakao code";
     }
+
+
+    @GetMapping("msg")
+    public ResponseEntity<String> messageSend(@RequestParam(value = "message") String message,
+                                              @RequestHeader(value = "Authorization",required = false) String authorization
+    ) {
+//        log.info(authorization);
+        // Bearer eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Im11bmdzdW5zYW5nQGtha2FvLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiaWF0IjoxNzI5NjQ5MzkzLCJleHAiOjE3Mjk3MzU3OTN9.5weQe0m9e9RIS9tOUPTx23N0Wv-3Jt7nr_GFIf8akbU
+        try {
+            String jwt = authorization.split("Bearer ")[1];
+            kakaoService.messageSend(jwt, message);
+        }catch (Exception e){
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("jwt empty");
+        }
+        // jwt
+//        kakaoService.messageSend(email, message);
+        return ResponseEntity.ok("message send success");
+    }
+
+
 }

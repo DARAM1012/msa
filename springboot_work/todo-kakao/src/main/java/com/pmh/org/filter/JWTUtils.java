@@ -18,33 +18,34 @@ import java.util.Date;
 @RequiredArgsConstructor
 @Slf4j
 public class JWTUtils {
-
-    // Environment @Value
-    @Value("${msa.jwt.secret}")
-    private String SECRET_KEY;
-
+    private String SECRET_KEY = "abcdefghijklmnopqrstuvwxyz01234567890";
+    private SecretKey secretKey = new SecretKeySpec(
+                                Base64.getEncoder().encode( SECRET_KEY.getBytes()),
+                                SignatureAlgorithm.HS256.getJcaName());
     public String createJwt(String email){
         String jwt = Jwts.builder()
                 .claim("email",email)
-                .claim("role","ROLE_ADMIN")
+                .claim("role","USER")
                 .issuedAt(new Date(System.currentTimeMillis()))
                 .expiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 24)) // 1초*60*60*24 1일 유효함
-                .signWith(SignatureAlgorithm.HS256,
-                        Base64.getEncoder().encodeToString(SECRET_KEY.getBytes()))
+                .signWith(secretKey)
                 .compact();
         return jwt;
     }
-
     public String getEmailFromJwt(String jwt){
-        SecretKey secretKey
-                = new SecretKeySpec(SECRET_KEY.getBytes(),
-                Jwts.SIG.HS256.key().build().getAlgorithm());
         Jws<Claims> cliams = Jwts.parser()
                 .verifyWith(secretKey)
                 .build()
                 .parseSignedClaims(jwt);
-
         return cliams.getPayload().get("email").toString();
+    }
+
+    public String getRoleFromJwt(String jwt){
+        Jws<Claims> cliams = Jwts.parser()
+                .verifyWith(secretKey)
+                .build()
+                .parseSignedClaims(jwt);
+        return cliams.getPayload().get("role").toString();
     }
 
 }
