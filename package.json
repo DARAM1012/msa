@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "create-expo-app": "^3.0.0",
+    "ex02": "^1.0.0"
+  }
+}
