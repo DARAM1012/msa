@@ -2,5 +2,8 @@
   "dependencies": {
     "@react-native-async-storage/async-storage": "^2.0.0",
     "create-react-app": "^5.0.1"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.3.2"
   }
 }
