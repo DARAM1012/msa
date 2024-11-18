@@ -1,0 +1,76 @@
+server:
+  port: 20000
+
+spring:
+  application:
+    name: user-service
+  datasource:
+    username: msa
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.0.29:3306/msa?characterEncoding=UTF-8&serverTimezone=UTC
+  output:
+    ansi:
+      enabled: always
+
+  # zipkin:
+  #   base-url: http://localhost:9411
+  #   enabled: true
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate.format_sql: true
+    show-sql: true
+    open-in-view: false
+
+# sql:
+#   init:
+#     platform: mysql
+
+mh:
+  value: "abcdefg"
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  #      defaultZone: http://localhost:8762/eureka, http://kubernetes.docker.internal:8763/eureka
+
+  instance:
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.instance_id:${random.value}}
+    prefer-ip-address: true
+
+logging:
+  level:
+    com.mh.userservice.feignclient: DEBUG
+  pattern:
+    level: '%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]'
+
+# management:
+#   tracing:
+#     sampling:
+#       probability: 1.0
+#     propagation:
+#       consume: B3
+#       produce: B3
+#   zipkin:
+#     tracing:
+#       endpoint: http://localhost:9411/api/v2/spans
+
+#refresh가 되는 설정
+#management:
+#  endpoint:
+#    web:
+#      exposure:
+#        include: "*"
+
+token:
+  expiration_time: 86400000
+  secret: abcdefghijklmnopqrstuvwxyz01234567890
+
+gateway:
+  ip: 127.0.0.1
