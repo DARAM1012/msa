@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("first-service")
-public class FirstController {
+@RequestMapping("second-service")
+public class SenodController {
 
     private final Environment environment;
 
