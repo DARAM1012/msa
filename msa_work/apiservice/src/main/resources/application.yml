@@ -1,13 +1,17 @@
 server:
   port: 8000
 
-## ??? ??? ?? ?????
+# ??? ??? ?? ?????
 eureka:
   client:
     register-with-eureka: true
     fetch-registry: true
     service-url:
       defaultZone: http://localhost:8761/eureka
+
+  instance:
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.instance_id:${random.value}}
+    prefer-ip-address: true
 
 spring:
   application:
@@ -23,3 +27,7 @@ spring:
           uri: lb://SECOND-SERVICE
           predicates:
             - Path=/second-service/**
+
+# localhost:8000/first-service/test
+# ->
+# FIRST-SERVICE/first-servuce/test

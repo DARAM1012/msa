@@ -4,11 +4,12 @@ server:
 spring:
   application:
     name: user-service
+
   datasource:
-    username: msa
+    username: root
     password: 1234
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://192.168.0.29:3306/msa?characterEncoding=UTF-8&serverTimezone=UTC
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3306/msa?serverTimezone=Asia/Seoul
   output:
     ansi:
       enabled: always
@@ -19,9 +20,9 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: create-drop
     properties:
-      hibernate.format_sql: true
+      hibernate.format_sql: false
     show-sql: true
     open-in-view: false
 
@@ -32,23 +33,23 @@ spring:
 mh:
   value: "abcdefg"
 
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone: http://localhost:8761/eureka
+#eureka:
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka
   #      defaultZone: http://localhost:8762/eureka, http://kubernetes.docker.internal:8763/eureka
 
-  instance:
-    instance-id: ${spring.cloud.client.ip-address}:${spring.application.instance_id:${random.value}}
-    prefer-ip-address: true
+#  instance:
+#    instance-id: ${spring.cloud.client.ip-address}:${spring.application.instance_id:${random.value}}
+#    prefer-ip-address: true
 
-logging:
-  level:
-    com.mh.userservice.feignclient: DEBUG
-  pattern:
-    level: '%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]'
+#logging:
+#  level:
+#    com.green.userservice.feignclient: DEBUG
+#  pattern:
+#    level: '%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]'
 
 # management:
 #   tracing:
@@ -61,16 +62,20 @@ logging:
 #     tracing:
 #       endpoint: http://localhost:9411/api/v2/spans
 
-#refresh가 되는 설정
-#management:
-#  endpoint:
-#    web:
-#      exposure:
-#        include: "*"
+# refresh 가 되는 설정
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+# jwt 비밀번호
 
 token:
-  expiration_time: 86400000
+  access_token_expiration_time: 86400 # 하루
+  refresh_token_expiration_time: 2592000 # 한달
   secret: abcdefghijklmnopqrstuvwxyz01234567890
 
 gateway:
   ip: 127.0.0.1
+
+first-service-url: http://localhost:40001

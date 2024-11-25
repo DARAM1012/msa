@@ -2,6 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: mariadb-initdb-config
+#  namespace : maria-name
 data:
   init.sql: |
     CREATE DATABASE IF NOT EXISTS mydata;
@@ -11,4 +12,4 @@ data:
     INSERT INTO friends VALUES (1, 'Abhijeet', 32, 'm');
     INSERT INTO friends VALUES (2, 'Anjali', 29, 'f');
     INSERT INTO friends VALUES (3, 'Aayush', 27, 'm');
-    INSERT INTO friends VALUES (4, 'Bibi', 27, 'f');
+    INSERT INTO friends VALUES (4, '길동', 28, 'm');

@@ -32,8 +32,10 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
 	implementation 'org.springframework.cloud:spring-cloud-starter-gateway'
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
 	runtimeOnly 'io.micrometer:micrometer-registry-prometheus'
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 	annotationProcessor 'org.projectlombok:lombok'
