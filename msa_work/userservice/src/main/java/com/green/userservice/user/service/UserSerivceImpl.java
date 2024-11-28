@@ -64,11 +64,20 @@ public class UserSerivceImpl implements UserService{
 
     @Override
     public List<UserResponse> list(){
-       List<UserEntity> list = userRepository.findAll();
-       List<UserResponse> userResponses = new ArrayList<>();
-       list.forEach(
-               userEntity -> userResponses.add(new ModelMapper().map(userEntity,UserResponse.class))
+        List<UserEntity> list = userRepository.findAll();
+        List<UserResponse> userResponses = new ArrayList<>();
+        list.forEach(
+            userEntity -> userResponses.add(new ModelMapper().map(userEntity,UserResponse.class))
         );
-       return userResponses;
+        return userResponses;
+    }
+
+    @Override
+    public UserResponse getUser(String userId) {
+        Optional<UserEntity> userEntity = userRepository.findByUserId(userId).orElseThrow(
+                () -> new UserException(String.format("User with id '%s not found", userId))
+        );
+        UserResponse userResponse = new ModelMapper().map(userEntity,UserResponse.class)
+        return null;
     }
 }

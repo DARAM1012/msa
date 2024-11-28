@@ -3,3 +3,4 @@ kubectl scale deployment secondservice --replicas=3
 
 # 접속 테스트 명령어
 for i in {1..100}; do curl localhost:40001/first-service/test; done
+

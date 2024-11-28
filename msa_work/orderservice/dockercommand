@@ -1,0 +1,8 @@
+#이미지 삭제
+docker rmi parkmyounghoi/order-service:msa.k8.01
+
+#이미지 생성
+docker build -t parkmyounghoi/order-service:msa.k8.01 .
+
+#이미지 dockerhub 업로드 명령어
+docker push parkmyounghoi/order-service:msa.k8.01
