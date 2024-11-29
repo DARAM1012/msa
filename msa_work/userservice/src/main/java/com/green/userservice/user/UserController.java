@@ -69,7 +69,7 @@ public class UserController {
         return ResponseEntity.ok(loginResponse);
     }
 
-    @GetMapping("get-user/{userId}")
+    @GetMapping("getuser/{userId}")
     public ResponseEntity<UserResponse> getUser(@PathVariable(value = "userId") String userId){
         UserResponse userResponse = userService.getUser(userId);
         return ResponseEntity.ok(userResponse);
