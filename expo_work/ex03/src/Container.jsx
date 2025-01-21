@@ -93,6 +93,7 @@ const styles = StyleSheet.create({
   textStyle: {
     color: '#fbfbfb',
     fontSize: 30,
+    
     width: '100%',
     paddingHorizontal: 20,
   },
