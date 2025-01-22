@@ -2,7 +2,10 @@
 
 const express = require('express');
 
+const db = require('./db');
+
 const app = express();
+app.use(express.json());
 
 app.get('/',(req,res)=>{
     res.send('hello');
@@ -16,6 +19,12 @@ app.get("/aa",(req,res)=>{
 
 app.post("/save",(req,res)=>{
     console.log("save 온다");
+    res.json({"status":200, message:"success"});
+});
+
+app.post("/login",(req,res)=>{
+    db.select();
+    console.log(req.body);
     res.json({"status":200});
 });
 
