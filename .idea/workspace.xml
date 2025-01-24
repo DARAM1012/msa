@@ -12,7 +12,6 @@
       <change afterPath="$PROJECT_DIR$/expo_work/ex04/src/screens/ImageUploadScreen.jsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/expo_work/ex04/src/screens/ProfileScreen.jsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/expo_work/ex04/src/screens/TodoMainScreen.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/expo_work/ex02/ex01/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/expo_work/ex02/ex01/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/expo_work/ex02/ex01/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/expo_work/ex02/ex01/android/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/expo_work/ex04/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/expo_work/ex04/.eslintrc.js" afterDir="false" />
@@ -88,7 +87,7 @@
       <workItem from="1737612370518" duration="2292000" />
       <workItem from="1737615692406" duration="1212000" />
       <workItem from="1737616922437" duration="4101000" />
-      <workItem from="1737694458888" duration="4263000" />
+      <workItem from="1737694458888" duration="4354000" />
     </task>
     <servers />
   </component>
