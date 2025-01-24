@@ -5,22 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="960aeefc-e62f-48ab-a4fc-09c04233409c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/expo_work/ex04/assets/images/dog.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/expo_work/ex04/src/components/ImageUploadComponent.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/expo_work/ex04/src/components/InputformComponent.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/expo_work/ex04/src/components/MyCountComponents.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/expo_work/ex04/src/screens/ImageUploadScreen.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/expo_work/ex04/src/screens/ProfileScreen.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/expo_work/ex04/src/screens/TodoMainScreen.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/expo_work/ex02/ex01/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/expo_work/ex02/ex01/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/expo_work/ex02/ex01/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/expo_work/ex02/ex01/android/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/expo_work/ex04/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/expo_work/ex04/.eslintrc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/expo_work/ex04/App.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/expo_work/ex04/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/expo_work/ex04/android/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/expo_work/ex04/babel.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/expo_work/ex04/babel.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/expo_work/ex04/metro.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/expo_work/ex04/metro.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/expo_work/ex04/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/expo_work/ex04/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/expo_work/ex04/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/expo_work/ex04/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/expo_work/ex01/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/expo_work/ex01/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/expo_work/ex03/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/expo_work/ex03/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +42,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
     "ts.external.directory.path": "D:\\work\\expo_work\\ex04\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -87,7 +73,7 @@
       <workItem from="1737612370518" duration="2292000" />
       <workItem from="1737615692406" duration="1212000" />
       <workItem from="1737616922437" duration="4101000" />
-      <workItem from="1737694458888" duration="4354000" />
+      <workItem from="1737694458888" duration="4625000" />
     </task>
     <servers />
   </component>
